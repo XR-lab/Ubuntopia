@@ -5,30 +5,64 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Mounting : MonoBehaviour {
+    [Tooltip("Drag player here.")]
     [SerializeField] private GameObject playerObject;
+    [Tooltip("Drag mount position here.")]
     [SerializeField] private Transform mountPosition;
-    private enum PlayerStatus { Grounded, Mounted, Flying }
-    private PlayerStatus status;
+    [Tooltip("Drag mount trigger collider here.")]
+    [SerializeField] private Collider mountCol;
+    [Tooltip("Drag Canvas>BlackScreen here.")]
+    [SerializeField] private Animator blackScreenAnimator;
+    [Tooltip("How long is the fade to black duration?")]
+    [SerializeField] private float blackScreenFadeOutDuration = 1f;
+
+    private float blackScreenTimer = 0f;
+    
+    [SerializeField] private bool canMount = false;
     public Action PlayerHasMounted;
-
-
-    private void Start() {
-        status = PlayerStatus.Grounded;
-    }
+    
+    // References.
+    [Tooltip("Drag player here.")]
+    [SerializeField] private PlayerStatus _playerStatus;
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.T)) {
-            MountUp();
+        // If within mount area..
+        if (canMount) {
+            // If player is idle or grounded..
+            if (_playerStatus.GetStatus() == 0||
+                _playerStatus.GetStatus() == 1) {
+                if (Input.GetKeyDown(KeyCode.T)) {
+                    StartMountUp();
+                }
+            }
         }
     }
 
-    private void MountUp() {
-        Destroy(playerObject.GetComponent<Rigidbody>());
-        playerObject.transform.position = mountPosition.position;
-        playerObject.transform.SetParent(mountPosition);
+    private void StartMountUp() {
+        blackScreenAnimator.SetTrigger("StartFade");
+    }
 
-        status = PlayerStatus.Mounted;
+    public void MountUp() {
+        // Destroy player rigidbody to avoid player-mount collision.
+        Destroy(playerObject.GetComponent<Rigidbody>());
+        // Place player on mount.
+        playerObject.transform.position = mountPosition.position;
+        // Set player as part of the mount.
+        playerObject.transform.SetParent(mountPosition);
         PlayerHasMounted.Invoke();
-        print("Announced PlayerHasMounted");
+        // Escape loop.
+        canMount = false;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other == mountCol) {
+            canMount = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other == mountCol) {
+            canMount = false;
+        }
     }
 }
