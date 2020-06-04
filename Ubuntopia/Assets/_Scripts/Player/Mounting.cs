@@ -13,10 +13,8 @@ public class Mounting : MonoBehaviour {
     [SerializeField] private Collider mountCol;
     [Tooltip("Drag Canvas>BlackScreen here.")]
     [SerializeField] private Animator blackScreenAnimator;
-    [Tooltip("How long is the fade to black duration?")]
-    [SerializeField] private float blackScreenFadeOutDuration = 1f;
 
-    private float blackScreenTimer = 0f;
+    private float blackScreenTimer;
     
     [SerializeField] private bool canMount = false;
     public Action PlayerHasMounted;
@@ -24,6 +22,10 @@ public class Mounting : MonoBehaviour {
     // References.
     [Tooltip("Drag player here.")]
     [SerializeField] private PlayerStatus _playerStatus;
+
+    private void Start() {
+        blackScreenTimer = 0f;
+    }
 
     private void Update() {
         // If within mount area..
