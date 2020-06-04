@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
---- !u!114 &-3270791920109579835
-=======
 --- !u!114 &-8425117782979027180
->>>>>>> 560cb41d53cd0219d713faec7f85b1b1dc57357c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33,12 +29,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dc886499c26824283350fa532d087d, type: 3}
   m_Name: XRGeneralSettings
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  Keys: 07000000
-  Values:
-  - {fileID: 651632065936189589}
---- !u!114 &651632065936189589
-=======
   Keys: 0100000007000000
   Values:
   - {fileID: 7685775799643739493}
@@ -61,7 +51,6 @@ MonoBehaviour:
   m_Loaders:
   - {fileID: 11400000, guid: f159342ad2877a248bf914079a91b8ff, type: 2}
 --- !u!114 &3402591468153776044
->>>>>>> 560cb41d53cd0219d713faec7f85b1b1dc57357c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,9 +62,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d236b7d11115f2143951f1e14045df39, type: 3}
   m_Name: Android Settings
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  m_LoaderManagerInstance: {fileID: -3270791920109579835}
-=======
   m_LoaderManagerInstance: {fileID: -8425117782979027180}
   m_InitManagerOnStart: 1
 --- !u!114 &7685775799643739493
@@ -91,5 +77,4 @@ MonoBehaviour:
   m_Name: Standalone Settings
   m_EditorClassIdentifier: 
   m_LoaderManagerInstance: {fileID: 933875932161796740}
->>>>>>> 560cb41d53cd0219d713faec7f85b1b1dc57357c
   m_InitManagerOnStart: 1
