@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Waypoints : MonoBehaviour {
     [Tooltip("Drag waypoints here in correct order.")]
