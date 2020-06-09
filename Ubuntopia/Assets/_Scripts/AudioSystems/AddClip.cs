@@ -4,19 +4,18 @@ using UnityEngine;
 [CustomEditor(typeof(AudioManager))]
 public class AddClip : Editor
 {
-	// ______________________________________________________________________________________________/ Private Variables
+	#region _________________________________________________________________________________________/ Private Variables
 	private bool _new = false;
 	private AudioManager _manager;
 	private SerializedProperty _prop;
 	
 	private string name;
 	private AudioClip clip;
-	[Range(0f, 1f)]private float volume = 1f;
-	[Range(-3f, 3f)] private float pitch = 1f;
-	private bool loop = false;
-	private bool playOnAwake = false;
-	[Range(0f, 1f)]private float spatialBlend = 0;
+	private float volume = 1f, pitch = 1f, spatialBlend = 0;
+	private bool loop = false, playOnAwake = false;
+	#endregion
 
+	// _______________________________________________________________________________________________________/ OnEnable
 	void OnEnable()
 	{
 		_prop = serializedObject.FindProperty("clip");
@@ -93,6 +92,7 @@ public class AddClip : Editor
 		
 	}
 
+	// ________________________________________________________________________________________________________/ MakeObj
 	private void MakeObj()
 	{
 		SoundClip soundthingy = ScriptableObject.CreateInstance<SoundClip>();
