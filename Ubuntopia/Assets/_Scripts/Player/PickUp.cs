@@ -6,20 +6,20 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    private int _found = 0;
+    private Transform _collectible;
 
-    public int total;
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.tag == "Artifact")
-        {
-            _found++;
-            //other.GetComponent<"Script with events">().play Voice line that 
-            Destroy(other.gameObject);
-            if (_found == total)
-            {
-                //Throw event for when you collect all artifacts;
-            }
-        }
-    }
+    public float minDistance;
+    
+   private void Start()
+   {
+       _collectible = GameObject.FindWithTag("Relic").GetComponent<Transform>();
+   }
+
+   private void FixedUpdate()
+   {
+       if (Vector3.Distance(this.gameObject.transform.position, _collectible.position) <= minDistance)
+       {
+           _collectible.gameObject.GetComponent<Collect>().Collected();
+       }
+   }
 }
