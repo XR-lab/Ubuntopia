@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Ubuntopia/Assets/Prefabs/AudioManager.prefab.meta
+guid: 87c5b0ab3fed3ec4987f57da135eb769
+PrefabImporter:
+=======
 guid: b69c9b95ff9fc8a44b5e162bbca8fbcc
 TextScriptImporter:
+>>>>>>> Develop:Ubuntopia/Assets/Oculus/VR/Editor/network_sec_config.xml.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

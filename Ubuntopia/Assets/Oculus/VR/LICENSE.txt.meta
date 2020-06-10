@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Ubuntopia/Assets/_Scenes/AudioManager.unity.meta
+guid: e2d5e07fea361b14c8030c40fdd15fd1
+DefaultImporter:
+=======
 guid: ea216613534b07f45adfcdd5ba09cf4e
 TextScriptImporter:
+>>>>>>> Develop:Ubuntopia/Assets/Oculus/VR/LICENSE.txt.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
