@@ -13,7 +13,7 @@ public class Waypoints : MonoBehaviour {
     }
 
     private void SetNewTarget(int old) {
-        GameObject newTarget = waypoints[old + 1];
+        GameObject newTarget = waypoints[(old + 1) % waypoints.Length];
         _movement.SetTarget(newTarget);
     }
 }

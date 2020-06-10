@@ -106,22 +106,11 @@ public class AudioManager : MonoBehaviour
         print(name + " is not playing or is misspelled");
     }
 
-    // _________________________________________________________________________________________________________/ Update
-    // public bool play = false;
-    // private void Update()
-    // {
-    //     if(play) {
-    //         Play("test");
-    //         play = false;
-    //     }
-    //
-    //     foreach (var p in _playing)
-    //     {
-    //         if (!p.isPlaying)
-    //         {
-    //             _available.Add(p);
-    //             _playing.Remove(p);
-    //         }
-    //     }
-    // }
+    // ____________________________________________________________________________________________________/ GetClipData
+    public SoundClip GetClipData(string name)
+    {
+        SoundClip c = _clips[name];
+        if(c == null){print("No such name found!"); return null;}
+        return c;
+    }
 }
