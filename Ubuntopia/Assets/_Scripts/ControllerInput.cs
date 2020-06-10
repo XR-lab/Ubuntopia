@@ -19,11 +19,6 @@ public class ControllerInput : MonoBehaviour
         {
             nextPhase();
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            nextPhase();
-        }
     }
 
     private void ButtonCheck(OVRInput.Button button)
