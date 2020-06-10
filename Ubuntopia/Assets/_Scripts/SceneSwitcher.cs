@@ -11,11 +11,17 @@ public class SceneSwitcher : MonoBehaviour
 
     void Start()
     {
+        if (_controllerInput == null) return;
         _controllerInput.nextPhase += SwitchScenes;
     }
 
-    private void SwitchScenes()
+    public void SwitchScenes()
     {
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public AsyncOperation LoadAsync()
+    {
+        return SceneManager.LoadSceneAsync(sceneIndex);
     }
 }

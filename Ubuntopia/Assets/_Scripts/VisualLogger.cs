@@ -10,7 +10,7 @@ public class VisualLogger : MonoBehaviour
     
     void Start()
     {
-        _controllerInput.nextPhase += TestMessage;
+        //_controllerInput.nextPhase += TestMessage;
     }
 
     void Update()
@@ -21,5 +21,10 @@ public class VisualLogger : MonoBehaviour
     private void TestMessage()
     {
         debugText.text = "This works";
+    }
+
+    public void TestMessage(string text)
+    {
+        debugText.text = " " + text + " ";
     }
 }
