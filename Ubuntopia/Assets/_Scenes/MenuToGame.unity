@@ -497,7 +497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1335921631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 1549420462}
   - component: {fileID: 1549420465}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +705,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _videoPlayer: {fileID: 952177617}
   _sceneSwitcher: {fileID: 1549420463}
-  _logger: {fileID: 1549420465}
 --- !u!114 &1549420463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8033c25bd264714ebb197adadf1fd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 2
+  sceneName: TestArea
   _controllerInput: {fileID: 0}
 --- !u!4 &1549420464
 Transform:
@@ -741,12 +740,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549420461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fecefb46c6da9f46a1ea27c8e738c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controllerInput: {fileID: 0}
   debugText: {fileID: 568788827}
 --- !u!1 &1638289085
 GameObject:

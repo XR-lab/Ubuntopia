@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    [SerializeField] private int sceneIndex;
+    [SerializeField] private string sceneName;
     [SerializeField] private ControllerInput _controllerInput;
 
     void Start()
@@ -17,11 +14,11 @@ public class SceneSwitcher : MonoBehaviour
 
     public void SwitchScenes()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneName);
     }
 
     public AsyncOperation LoadAsync()
     {
-        return SceneManager.LoadSceneAsync(sceneIndex);
+        return SceneManager.LoadSceneAsync(sceneName);
     }
 }
