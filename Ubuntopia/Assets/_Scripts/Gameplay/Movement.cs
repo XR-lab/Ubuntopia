@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour {
         currentTargetPosition = currentTarget.transform.position;
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if (isMoving) {
             Move();
         }
