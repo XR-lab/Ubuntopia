@@ -669,6 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: BlueNileFalls
   _controllerInput: {fileID: 1126201762}
+  fuck: 0
 --- !u!1 &1542878766
 GameObject:
   m_ObjectHideFlags: 0

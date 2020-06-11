@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -9,19 +8,17 @@ public class AudioManager : MonoBehaviour
     [HideInInspector] public AudioClip clip;
     
     // ____________________________________________________________________________________________/ 'Private' Variables
+    [SerializeField] private SoundCollection _sounds;
     
     // ______________________________________________________________________________________________/ Private Variables
     private Dictionary<string, SoundClip> _clips = new Dictionary<string, SoundClip>();
     private List<AudioSource> _available = new List<AudioSource>();
     private List<AudioSource> _playing = new List<AudioSource>();
     private int amountOfAudioSources = 10;
-    private SoundCollection _sounds;
 
     // __________________________________________________________________________________________________________/ Awake
     private void Awake()
     {
-        _sounds = (SoundCollection)AssetDatabase.LoadAssetAtPath("Assets/Audio/_SoundCollection.asset", typeof(SoundCollection));
-        
         DontDestroy();
         SetupAudioSources();
         LoadSoundCollection();

@@ -27,7 +27,7 @@ public class SceneSwitcher : MonoBehaviour
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(600);
         SwitchScenes();
     }
 }
