@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/MainScenes/StartScreen.unity
     guid: f0da1e620e0f80f4191f4fdc399b64cf
   - enabled: 0
@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/TestArea.unity
     guid: 5b08c860125abb0429f431276857757f
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/MainScenes/BlueNileFalls.unity
     guid: 2ff51a39403aa864e9696d9ecadecc60
   - enabled: 1
