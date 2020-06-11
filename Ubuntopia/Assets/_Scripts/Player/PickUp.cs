@@ -17,5 +17,5 @@ public class PickUp : MonoBehaviour
        {
            _collectible.gameObject.GetComponent<Collect>().Collected();
        }
-   }
+   }    
 }
