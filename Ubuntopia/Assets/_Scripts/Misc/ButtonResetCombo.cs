@@ -33,5 +33,9 @@ public class ButtonResetCombo : MonoBehaviour
 
             yield return null;
         }
+
+        _active1 = false;
+        _active2 = false; 
+        _active3 = false;
     }
 }
