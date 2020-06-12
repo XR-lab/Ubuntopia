@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/ButtonComboTest.unity
     guid: 666651b1c09f97345b182ad70bb94ea6
+  - enabled: 1
+    path: Assets/_Scenes/MountingUp.unity
+    guid: 6cfd8fca9c354a9429b426ba31c83ed7
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e93c2f3d02c4d0d43ae16e54c521bbc0,
       type: 2}
