@@ -32,19 +32,15 @@ public class ManualFlight : MonoBehaviour
 	    if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 1f)
 	    {
 		    Move();
-			if (!_manualMovementActive)
-			{
-				_manualMovementActive = true;
-				_movement.SetActive(false);
-			}
+		    if (_manualMovementActive) return;
+		    _manualMovementActive = true;
+			_movement.SetActive(false);
 	    }
 	    else
 	    {
-			if (_manualMovementActive)
-			{
-				_manualMovementActive = false;
-				_movement.SetActive(true);
-			}
+		    if (!_manualMovementActive) return;
+		    _manualMovementActive = false;
+			_movement.SetActive(true);
 	    }
     }
     
