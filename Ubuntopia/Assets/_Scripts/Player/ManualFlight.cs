@@ -2,8 +2,6 @@
 
 public class ManualFlight : MonoBehaviour
 {
-	// _______________________________________________________________________________________________/ Public Variables
-
 	// _______________________________________________________________________________________/ SerializeField Variables
 	[SerializeField] private Transform _rightHand, _leftHand;
 	[SerializeField] private Transform _player;
@@ -12,12 +10,6 @@ public class ManualFlight : MonoBehaviour
 	private bool _manualMovementActive = false;
 	private float _maxSpeed;
 	private Movement _movement;
-	
-	// __________________________________________________________________________________________________________/ Awake
-    private void Awake()
-    {
-        
-    }
 	
     // __________________________________________________________________________________________________________/ Start
     private void Start()
