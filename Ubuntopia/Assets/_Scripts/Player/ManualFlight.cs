@@ -7,7 +7,7 @@ public class ManualFlight : MonoBehaviour
 	[SerializeField] private Transform _player;
 	
 	// ______________________________________________________________________________________________/ Private Variables
-	private bool _manualMovementActive = false;
+	private bool _manualMovementActive = true;
 	private float _maxSpeed;
 	private Movement _movement;
 	
@@ -21,25 +21,25 @@ public class ManualFlight : MonoBehaviour
     // _________________________________________________________________________________________________________/ Update
     private void Update()
     {
-	    if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 1f)
+	    _player.transform.position += _player.transform.forward * Time.deltaTime * _maxSpeed;
+	    if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f)
 	    {
 		    Move();
 		    if (_manualMovementActive) return;
 		    _manualMovementActive = true;
 			_movement.SetActive(false);
 	    }
-	    else
-	    {
-		    if (!_manualMovementActive) return;
-		    _manualMovementActive = false;
-			_movement.SetActive(true);
-	    }
+	  //   else
+	  //   {
+		 //    if (!_manualMovementActive) return;
+		 //    _manualMovementActive = false;
+			// _movement.SetActive(true);
+	  //   }
     }
     
     // _________________________________________________________________________________________________________/ Update
     private void Move()
     {
-	    _player.transform.position += _player.transform.forward * Time.deltaTime * _maxSpeed;
 	    float difrence = _leftHand.position.y - _rightHand.position.y;
 	    _player.Rotate(0, difrence, 0);
     }
