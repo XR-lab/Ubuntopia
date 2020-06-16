@@ -102,7 +102,17 @@ public class Movement : MonoBehaviour {
         } else {
             return 0.0f;
         }
-    } 
+    }
+
+    public void SetActive(bool state)
+    {
+        isMoving = state;
+    }
+
+    public float GetMaxSpeed()
+    {
+        return maxSpeed;
+    }
     
     
     // Look towards (works).
