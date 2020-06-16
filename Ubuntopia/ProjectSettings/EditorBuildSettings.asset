@@ -4,7 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/MainScenes/StartScreen.unity
+    guid: f0da1e620e0f80f4191f4fdc399b64cf
+  - enabled: 0
+    path: Assets/_Scenes/MenuToGame.unity
+    guid: 4384b210a9b015048acf5ea95ede6239
+  - enabled: 0
+    path: Assets/_Scenes/TestArea.unity
+    guid: 5b08c860125abb0429f431276857757f
+  - enabled: 1
+    path: Assets/_Scenes/MainScenes/BlueNileFalls.unity
+    guid: 2ff51a39403aa864e9696d9ecadecc60
+  - enabled: 0
+    path: Assets/_Scenes/MainScenes/EndScreen.unity
+    guid: 8e7e9251b522f914d92a9dfd35ad6fc5
+  - enabled: 0
+    path: Assets/_Scenes/ManualMovement.unity
+    guid: 4568ef83757852d47b29552e33cc6c44
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e93c2f3d02c4d0d43ae16e54c521bbc0,
       type: 2}

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -9,19 +8,17 @@ public class AudioManager : MonoBehaviour
     [HideInInspector] public AudioClip clip;
     
     // ____________________________________________________________________________________________/ 'Private' Variables
+    [SerializeField] private SoundCollection _sounds;
     
     // ______________________________________________________________________________________________/ Private Variables
     private Dictionary<string, SoundClip> _clips = new Dictionary<string, SoundClip>();
     private List<AudioSource> _available = new List<AudioSource>();
     private List<AudioSource> _playing = new List<AudioSource>();
     private int amountOfAudioSources = 10;
-    private SoundCollection _sounds;
 
     // __________________________________________________________________________________________________________/ Awake
     private void Awake()
     {
-        _sounds = (SoundCollection)AssetDatabase.LoadAssetAtPath("Assets/Audio/_SoundCollection.asset", typeof(SoundCollection));
-        
         DontDestroy();
         SetupAudioSources();
         LoadSoundCollection();
@@ -106,22 +103,11 @@ public class AudioManager : MonoBehaviour
         print(name + " is not playing or is misspelled");
     }
 
-    // _________________________________________________________________________________________________________/ Update
-    // public bool play = false;
-    // private void Update()
-    // {
-    //     if(play) {
-    //         Play("test");
-    //         play = false;
-    //     }
-    //
-    //     foreach (var p in _playing)
-    //     {
-    //         if (!p.isPlaying)
-    //         {
-    //             _available.Add(p);
-    //             _playing.Remove(p);
-    //         }
-    //     }
-    // }
+    // ____________________________________________________________________________________________________/ GetClipData
+    public SoundClip GetClipData(string name)
+    {
+        SoundClip c = _clips[name];
+        if(c == null){print("No such name found!"); return null;}
+        return c;
+    }
 }
