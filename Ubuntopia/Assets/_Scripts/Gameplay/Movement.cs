@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour {
     private int currentTargetIndex;
     
     // Gameplay values.
-    private bool isMoving = true;
+    private bool isMoving = false;
     private bool isFlying = false;
     private float arrivalDistance = 1f;
     private float rotationSpeed = 1f;
