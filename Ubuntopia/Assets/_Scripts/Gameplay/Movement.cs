@@ -132,4 +132,9 @@ public class Movement : MonoBehaviour {
     //     0.01f, 
     //     0f);
     // transform.rotation = Quaternion.LookRotation(newDirection);
+
+    public GameObject GetTarget()
+    {
+        return currentTarget;
+    }
 }
