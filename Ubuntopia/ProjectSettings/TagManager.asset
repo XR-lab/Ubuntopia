@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Relic
   - MistManager
+  - HarishLeft
+  - HarishRight
+  - Harish
   layers:
   - Default
   - TransparentFX
