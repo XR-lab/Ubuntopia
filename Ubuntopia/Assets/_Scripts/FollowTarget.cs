@@ -6,9 +6,13 @@ public class FollowTarget : MonoBehaviour
 	[SerializeField] private Transform _target;
 	[SerializeField] private Vector3 _offset;
 	
-    // _____________________________________________________________________________________________________________/ Update
-    private void Update()
+    // _________________________________________________________________________________________________________/ Update
+    private void FixedUpdate()
     {
-	    transform.position = _target.position + _offset;
+	    Vector3 offset = new Vector3() + 
+	                     (_target.right * _offset.x) +
+	                     (_target.up * _offset.y) +
+	                     (_target.forward * _offset.z);
+	    transform.position = _target.position + offset;
     }
 }
