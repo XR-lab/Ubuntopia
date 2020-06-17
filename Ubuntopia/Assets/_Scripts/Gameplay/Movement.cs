@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour {
     private int currentTargetIndex;
     
     // Gameplay values.
-    private bool isMoving = true;
+    private bool isMoving = false;
     private bool isFlying = false;
     private float arrivalDistance = 1f;
     private float rotationSpeed = 1f;
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour {
         currentTargetPosition = currentTarget.transform.position;
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if (isMoving) {
             Move();
         }
@@ -102,7 +102,17 @@ public class Movement : MonoBehaviour {
         } else {
             return 0.0f;
         }
-    } 
+    }
+
+    public void SetActive(bool state)
+    {
+        isMoving = state;
+    }
+
+    public float GetMaxSpeed()
+    {
+        return maxSpeed;
+    }
     
     
     // Look towards (works).
@@ -122,4 +132,9 @@ public class Movement : MonoBehaviour {
     //     0.01f, 
     //     0f);
     // transform.rotation = Quaternion.LookRotation(newDirection);
+
+    public GameObject GetTarget()
+    {
+        return currentTarget;
+    }
 }
