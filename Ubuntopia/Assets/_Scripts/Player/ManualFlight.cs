@@ -50,7 +50,7 @@ public class ManualFlight : MonoBehaviour
     }
     
     // _______________________________________________________________________________________________/ SetBoundaryState
-    private void SetBoundaryState(bool state)
+    public void SetBoundaryState(bool state)
     {
 	    _outOffBoundarys = state;
     }
