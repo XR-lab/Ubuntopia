@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 555d677c2c3ab5a40b8a1c9c7cb4e9db, type: 3}
-  m_Name: 'Vleugels_soundeffect '
+  m_Name: Mist
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 15a452a585ae13f459411f9af0ec4991, type: 3}
+  clip: {fileID: 8300000, guid: d3f8e328cb53ea945a026a320d2ab233, type: 3}
   volume: 1
   pitch: 1
   loop: 0

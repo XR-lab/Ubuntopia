@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SFX_WingFlap : MonoBehaviour {
-    [SerializeField, Tooltip("Drag Audiomanager here.")]
+    [SerializeField, Tooltip("Drag AudioManager here (from scene).")]
     private AudioManager _audioManager;
 
     public void PlayWingFlap() {
-        print("playing wing flap");
-        _audioManager.Play("WingFlap_Test");
+        print("Playing wing flap sound.");
+        _audioManager.Play("Wings");
     }
 }
