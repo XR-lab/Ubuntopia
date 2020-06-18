@@ -1,37 +1,41 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class BackToRoad : MonoBehaviour
 {
-    [SerializeField] private bool _left, right;
-    [SerializeField] private GameObject _correctionTarget;
+    [SerializeField] private List<GameObject> _correctionTarget;
     private GameObject _previousTarget;
-    
+    private Movement _playerMovement;
+    private ManualFlight _manualFlight;
+
+    private void Start()
+    {
+        _playerMovement = GameObject.FindWithTag("Harish").GetComponent<Movement>();
+        _manualFlight = GameObject.FindWithTag("Player").GetComponent<ManualFlight>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.CompareTag("HarishLeft"))
         {
-            var player = other.GetComponent<Movement>();
-            _previousTarget = player.GetTarget();
-            if (_left)
-            {
-                player.SetTarget(_correctionTarget);
-            }
+            _manualFlight.SetBoundaryState(true);
+            _previousTarget = _playerMovement.GetTarget();
+            _playerMovement.SetTarget(_correctionTarget[0]);
+        }
 
-            if (right)
-            {
-                player.SetTarget(_correctionTarget);
-            }
+        if (other.transform.CompareTag("HarishRight"))
+        {
+            _manualFlight.SetBoundaryState(true);
+            _previousTarget = _playerMovement.GetTarget();
+            _playerMovement.SetTarget(_correctionTarget[1]);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.CompareTag("HarishLeft") || other.transform.CompareTag("HarishRight") )
         {
+            _manualFlight.SetBoundaryState(false);
             other.GetComponent<Movement>().SetTarget(_previousTarget);
         }
     }

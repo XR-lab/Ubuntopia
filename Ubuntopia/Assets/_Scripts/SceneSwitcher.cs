@@ -4,13 +4,6 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
     [SerializeField] private string sceneName;
-    [SerializeField] private ControllerInput _controllerInput;
-
-    void Start()
-    {
-        if (_controllerInput == null) return;
-        _controllerInput.nextPhase += SwitchScenes;
-    }
 
     public void SwitchScenes()
     {

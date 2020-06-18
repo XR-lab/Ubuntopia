@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ControllerInput : MonoBehaviour
 {
     [SerializeField] private float maxTime;
     [SerializeField] private OVRInput.Button holdbutton;
+    [SerializeField] private IntroManager _introManager;
 
     private bool _startIenumerator = true;
     private float currentTime = 0f;
-    public delegate void nextPhaseStarter();
-    public nextPhaseStarter nextPhase;
 
     void Update()
     {
@@ -20,20 +18,8 @@ public class ControllerInput : MonoBehaviour
         else if (_startIenumerator)
         {
             _startIenumerator = false;
-            StartCoroutine(Intro());
+            _introManager.StartIntro();
         }
-    }
-
-    private IEnumerator Intro()
-    {
-        string clipName = "Intro";
-        AudioManager am = AudioManager.instance;
-        float waitTimer = am.GetClipData(clipName).clip.length;
-        am.Play(clipName);
-        
-        yield return new WaitForSeconds(waitTimer);
-
-        nextPhase();
     }
 
     private void ButtonCheck(OVRInput.Button button)
