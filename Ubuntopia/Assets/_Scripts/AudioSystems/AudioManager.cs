@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     
     // ______________________________________________________________________________________________/ Private Variables
     private Dictionary<string, SoundClip> _clips = new Dictionary<string, SoundClip>();
+    [SerializeField]
     private List<AudioSource> _available = new List<AudioSource>();
     private List<AudioSource> _playing = new List<AudioSource>();
     private int amountOfAudioSources = 10;
@@ -36,6 +37,16 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
+        }
+    }
+    
+    // _________________________________________________________________________________________________________/ Update
+    private void Update() {
+        foreach (var p in _playing) {
+            if (!p.isPlaying) {
+                _available.Add(p);
+                _playing.Remove(p);
+            }
         }
     }
     

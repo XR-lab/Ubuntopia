@@ -11,7 +11,6 @@ public class Movement : MonoBehaviour {
     
     // Gameplay values.
     private bool isMoving = true;
-    private bool isFlying = false;
     private float arrivalDistance = 1f;
     private float rotationSpeed = 1f;
     
@@ -26,6 +25,7 @@ public class Movement : MonoBehaviour {
     
     // Action.
     public Action<int> Arrived;
+    public Action Moving;
 
     private void Start() {
         // Initialize variables.
@@ -33,6 +33,9 @@ public class Movement : MonoBehaviour {
         currentVelocity = new Vector3(0, 0, 0);
         currentPosition = player.transform.position;
         currentTargetPosition = currentTarget.transform.position;
+        
+        // Announce we are moving.
+        Moving.Invoke();
     }
 
     private void FixedUpdate() {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wind
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 4d9653d3930084a4aab1fe221a8a802c, type: 3}
-  volume: 1
+  volume: 0.1
   pitch: 1
   loop: 0
   playOnAwake: 0
