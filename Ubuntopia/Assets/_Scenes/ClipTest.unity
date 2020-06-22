@@ -431,8 +431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: EndScreen
-  _controllerInput: {fileID: 0}
-  fuck: 1
 --- !u!4 &785959632
 Transform:
   m_ObjectHideFlags: 0
@@ -1134,4 +1132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7589f133747d8494b828422e2636129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: 0
   maxTime: 5
+  targetScene: 0

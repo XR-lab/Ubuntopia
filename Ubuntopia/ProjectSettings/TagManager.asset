@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Relic
+  - MistManager
+  - HarishLeft
+  - HarishRight
+  - Harish
+  - HarishColliders
   layers:
   - Default
   - TransparentFX

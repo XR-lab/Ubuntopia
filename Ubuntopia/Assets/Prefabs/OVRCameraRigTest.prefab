@@ -775,6 +775,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1837021810558652813}
     m_Modifications:
+    - target: {fileID: 2997152441707596445, guid: d381656593cdcf64ab46dc6c88e20a05,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4429278784510833785, guid: d381656593cdcf64ab46dc6c88e20a05,
         type: 3}
       propertyPath: m_Layer
@@ -860,7 +865,13 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8527076359650563882, guid: d381656593cdcf64ab46dc6c88e20a05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2997152441707596445, guid: d381656593cdcf64ab46dc6c88e20a05, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d381656593cdcf64ab46dc6c88e20a05, type: 3}
 --- !u!1 &5071047743616911213 stripped
 GameObject:
@@ -965,12 +976,17 @@ PrefabInstance:
     - target: {fileID: 8527076359650563882, guid: d381656593cdcf64ab46dc6c88e20a05,
         type: 3}
       propertyPath: m_Name
-      value: hand Variant (1)
+      value: hand Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8527076359650563882, guid: d381656593cdcf64ab46dc6c88e20a05,
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8527076359650563882, guid: d381656593cdcf64ab46dc6c88e20a05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2997152441707596445, guid: d381656593cdcf64ab46dc6c88e20a05, type: 3}
