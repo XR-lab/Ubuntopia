@@ -93,7 +93,7 @@ public class AudioManager : MonoBehaviour
     public void PlayRandom(string name, int numberOfVariations)
     {
         int random = Random.Range(0, numberOfVariations);
-        Play(name+random);
+        Play(name+random, transform);
     }
     public void PlayRandom(string name, int numberOfVariations, Transform target)
     {
