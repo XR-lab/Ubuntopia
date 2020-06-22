@@ -26,10 +26,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.006182822
-  m_Height: 0.023550633
+  m_Radius: 0.2580278
+  m_Height: 0.8859391
   m_Direction: 2
-  m_Center: {x: 0, y: 0.027708456, z: 0.022663588}
+  m_Center: {x: -0.041021943, y: 1.4390879, z: 1.1375136}
 --- !u!136 &1405345379
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40,10 +40,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.007977379
-  m_Height: 0.028915767
+  m_Radius: 0.37293178
+  m_Height: 1.6937861
   m_Direction: 2
-  m_Center: {x: 0, y: 0.020151898, z: 0.00073320983}
+  m_Center: {x: 0.021933854, y: 0.94911844, z: 0.123004556}
 --- !u!1001 &6985881776550963706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59,17 +59,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8d63238fe06745d42a789ca497bab47a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.043616515
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8d63238fe06745d42a789ca497bab47a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8d63238fe06745d42a789ca497bab47a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8d63238fe06745d42a789ca497bab47a,
         type: 3}
@@ -114,12 +114,17 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8d63238fe06745d42a789ca497bab47a,
         type: 3}
       propertyPath: m_Name
-      value: Harish
+      value: Harish Variant
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8d63238fe06745d42a789ca497bab47a,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8d63238fe06745d42a789ca497bab47a,
+        type: 3}
+      propertyPath: m_TagString
+      value: HarishColliders
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -8020917155731900093, guid: 8d63238fe06745d42a789ca497bab47a, type: 3}
