@@ -111,10 +111,6 @@ public class OVRSkeleton : MonoBehaviour
 	public IList<OVRBoneCapsule> Capsules { get; private set; }
 	public SkeletonType GetSkeletonType() { return _skeletonType; }
 
-#if UNITY_EDITOR
-	public bool ShouldUpdateBonePoses = false;
-#endif
-
 	private void Awake()
 	{
 		if (_dataProvider == null)
@@ -296,21 +292,6 @@ public class OVRSkeleton : MonoBehaviour
 
 	private void Update()
 	{
-#if UNITY_EDITOR
-		if (OVRInput.IsControllerConnected(OVRInput.Controller.Hands) && !IsInitialized)
-		{
-			if (_skeletonType != SkeletonType.None)
-			{
-				Initialize();
-			}
-		}
-
-		if (!ShouldUpdateBonePoses)
-		{
-			return;
-		}
-#endif
-
 		if (!IsInitialized || _dataProvider == null)
 		{
 			IsDataValid = false;
