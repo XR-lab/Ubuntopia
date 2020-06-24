@@ -707,7 +707,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522952104}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.45973906, z: -0, w: 0.8880541}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -716,7 +716,7 @@ Transform:
   - {fileID: 1854457659}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 54.741, z: 0}
 --- !u!1 &561499401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Harish_wing_left
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5716681864270162303, guid: 63545395ba0de2344a42098067e69c56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 63545395ba0de2344a42098067e69c56, type: 3}
 --- !u!4 &724798227 stripped
 Transform:
@@ -1929,7 +1930,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5716681864270162303, guid: 63545395ba0de2344a42098067e69c56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 63545395ba0de2344a42098067e69c56, type: 3}
 --- !u!4 &1358324482 stripped
 Transform:
