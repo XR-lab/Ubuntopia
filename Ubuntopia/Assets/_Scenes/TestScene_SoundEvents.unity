@@ -279,7 +279,13 @@ PrefabInstance:
         type: 3}
       propertyPath: clip
       value: 
-      objectReference: {fileID: 8300000, guid: 92457a33a19632c42a07287fcb8ab63b, type: 3}
+      objectReference: {fileID: 8300000, guid: e1fd1d420a304ab469aa1593b0f177d4, type: 3}
+    - target: {fileID: 613183548570414579, guid: 1f129eb23424b764eb7efed83ccd5fdf,
+        type: 3}
+      propertyPath: _sounds
+      value: 
+      objectReference: {fileID: 11400000, guid: ff2a62e75e039944992e79e9b03d6437,
+        type: 2}
     - target: {fileID: 613183548570414588, guid: 1f129eb23424b764eb7efed83ccd5fdf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -659,8 +665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87eb7303f927ffa48aabc90b0a29ed03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mists:
-  - {fileID: 2084512714}
   mistReducingSpeed: 0.7
 --- !u!4 &519628034
 Transform:
@@ -1768,6 +1772,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 112272401}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1573606445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573606444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4548bab9b5aa7ea408cc43eb71920b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioManager: {fileID: 766908612}
 --- !u!114 &1573606446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1795,9 +1812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7846a216b1a47584096187e1e5a670b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 3
-  maxTime: 5
-  numberOfVariations: 3
+  minTime: 5
+  maxTime: 8
+  numberOfVariations: 2
   _audioManager: {fileID: 766908612}
   _movement: {fileID: 2119663679}
 --- !u!1001 &1589679800
@@ -1870,7 +1887,7 @@ PrefabInstance:
     - target: {fileID: 1832464182882793201, guid: 6400084b42f5a0e47b0a65a4615a51b9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1832464182882793201, guid: 6400084b42f5a0e47b0a65a4615a51b9,
         type: 3}
@@ -2489,12 +2506,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1271.0986, y: 379.9536, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!198 &2084512714 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8978381581414229457, guid: 3aecb2045befbac439ab956a502aa3d1,
-    type: 3}
-  m_PrefabInstance: {fileID: 209360160}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2084512715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8978381581414229458, guid: 3aecb2045befbac439ab956a502aa3d1,

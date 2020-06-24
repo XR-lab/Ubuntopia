@@ -18,7 +18,7 @@ public class SFX_Wind : MonoBehaviour {
     private bool isMoving = false;
     
     // Default string name for sfx file.
-    private string defaultName = "Wind";
+    private string name = "Wind";
     
     // References.
     [SerializeField, Tooltip("Drag AudioManager here (from scene).")]
@@ -30,8 +30,8 @@ public class SFX_Wind : MonoBehaviour {
         // Subscribe to event.
         _movement.Moving += StartPlaying;
         
-        // Play sfx on start.
-        PlaySFX();
+        // Initialize randomtime.
+        randomTime = Random.Range(minTime, maxTime);
     }
     
     private void OnDestroy() {
@@ -54,12 +54,7 @@ public class SFX_Wind : MonoBehaviour {
     }
 
     public void PlaySFX() {
-        var random = Random.Range(0, numberOfVariations);
-        var name = defaultName;
-        name += random;
-        
-        print(name);
-        // _audioManager.Play(name);
+        _audioManager.PlayRandom(name, numberOfVariations);
         randomTime = Random.Range(minTime, maxTime);
     }
     

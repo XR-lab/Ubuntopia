@@ -1,18 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class SFX_AmbientMusic : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class SFX_AmbientMusic : MonoBehaviour {
+    // Make sure the sfx "loop" option is ticked.
+    // Default string name for sfx file.
+    private string name = "AmbientMusic";
+    
+    // References.
+    [SerializeField, Tooltip("Drag AudioManager here (from scene).")]
+    private AudioManager _audioManager;
+
+    private void Start() {
+        // Play both sfx on start.
+        PlaySFX();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void PlaySFX() {
+        _audioManager.Play(name + 0);
+        _audioManager.Play(name + 1);
     }
+    
 }

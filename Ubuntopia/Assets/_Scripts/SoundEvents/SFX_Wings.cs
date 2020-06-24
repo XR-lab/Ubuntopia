@@ -7,6 +7,9 @@ public class SFX_Wings : MonoBehaviour {
     private float animationTime = 2f;
     private float timer;
     private bool isMoving = false;
+    
+    // Default string name for sfx file.
+    private string name = "Wings";
 
     // References.
     [SerializeField, Tooltip("Drag AudioManager here (from scene).")]
@@ -42,6 +45,6 @@ public class SFX_Wings : MonoBehaviour {
     }
 
     public void PlaySFX() {
-        _audioManager.Play("Wings");
+        _audioManager.Play(name);
     }
 }

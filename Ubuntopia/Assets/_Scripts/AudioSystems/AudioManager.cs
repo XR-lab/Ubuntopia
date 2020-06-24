@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     private Dictionary<string, SoundClip> _clips = new Dictionary<string, SoundClip>();
     [SerializeField]
     private List<AudioSource> _available = new List<AudioSource>();
+    [SerializeField]
     private List<AudioSource> _playing = new List<AudioSource>();
     private int amountOfAudioSources = 10;
 
@@ -63,17 +64,6 @@ public class AudioManager : MonoBehaviour
         Destroy(audioSource);
     }
     
-    // _________________________________________________________________________________________________________/ Update
-    private void Update() 
-    {
-        foreach (var p in _playing) {
-            if (!p.isPlaying) {
-                _available.Add(p);
-                _playing.Remove(p);
-            }
-        }
-    }
-
     // __________________________________________________________________________________________/ Load Sound Collection
     private void LoadSoundCollection()
     {
@@ -86,9 +76,9 @@ public class AudioManager : MonoBehaviour
     }
     
     // ___________________________________________________________________________________________________________/ Play
-    public void Play(string name)
-    {
+    public void Play(string name) {
         Play(name, transform);
+        print("playing: " + name);
     }
     public void Play(string name, Transform target)
     {
@@ -105,7 +95,9 @@ public class AudioManager : MonoBehaviour
     {
         int random = Random.Range(0, numberOfVariations);
         Play(name+random, transform);
+        print("playing: " + name+random);
     }
+    
     public void PlayRandom(string name, int numberOfVariations, Transform target)
     {
         int random = Random.Range(0, numberOfVariations);
