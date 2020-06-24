@@ -48,37 +48,19 @@ public class AddClip : Editor
 				_new = false;
 			}
 			
-			EditorGUILayout.BeginHorizontal();
-			GUILayout.Label("Name: ");
-			name = EditorGUILayout.TextField(name);
-			EditorGUILayout.EndHorizontal();
+			name = EditorGUILayout.TextField(new GUIContent("Name: "), name);
 			
 			EditorGUILayout.PropertyField(_prop, new GUIContent("Clip: "));
 			
-			EditorGUILayout.BeginHorizontal();
-			GUILayout.Label("Volume: ");
-			volume = EditorGUILayout.Slider(volume, 0f, 1f);
-			EditorGUILayout.EndHorizontal();
+			volume = EditorGUILayout.Slider(new GUIContent("Volume: "),  volume, 0f, 1f);
 			
-			EditorGUILayout.BeginHorizontal();
-			GUILayout.Label("Pitch: ");
-			pitch = EditorGUILayout.Slider(pitch, -3f, 3f);
-			EditorGUILayout.EndHorizontal();
+			pitch = EditorGUILayout.Slider(new GUIContent("Pitch: "),  pitch, -3f, 3f);
 			
-			EditorGUILayout.BeginHorizontal();
-			GUILayout.Label("Loop: ");
-			loop = EditorGUILayout.Toggle(loop);
-			EditorGUILayout.EndHorizontal();
+			loop = EditorGUILayout.Toggle(new GUIContent("Loop: "), loop);
 			
-			EditorGUILayout.BeginHorizontal();
-			GUILayout.Label("Play on Awake: ");
-			playOnAwake = EditorGUILayout.Toggle(playOnAwake);
-			EditorGUILayout.EndHorizontal();
+			playOnAwake = EditorGUILayout.Toggle(new GUIContent("Play on Awake: "), playOnAwake);
 			
-			EditorGUILayout.BeginHorizontal();
-			GUILayout.Label("3D noise (0 = No, 1 = Yes): ");
-			spatialBlend = EditorGUILayout.Slider(spatialBlend, 0f, 1f);
-			EditorGUILayout.EndHorizontal();
+			spatialBlend = EditorGUILayout.Slider(new GUIContent("3D noise (0 = No, 1 = Yes): "),  spatialBlend, 0f, 1f);
 			
 			serializedObject.ApplyModifiedProperties();
 			
