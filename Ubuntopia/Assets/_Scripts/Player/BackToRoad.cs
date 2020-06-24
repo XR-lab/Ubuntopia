@@ -20,6 +20,7 @@ public class BackToRoad : MonoBehaviour
         {
             _manualFlight.SetBoundaryState(true);
             _previousTarget = _playerMovement.GetTarget();
+            _playerMovement.SetActive(true);
             _playerMovement.SetTarget(_correctionTarget[0]);
         }
 
@@ -27,6 +28,7 @@ public class BackToRoad : MonoBehaviour
         {
             _manualFlight.SetBoundaryState(true);
             _previousTarget = _playerMovement.GetTarget();
+            _playerMovement.SetActive(true);
             _playerMovement.SetTarget(_correctionTarget[1]);
         }
     }
@@ -36,6 +38,7 @@ public class BackToRoad : MonoBehaviour
         if (other.transform.CompareTag("HarishLeft") || other.transform.CompareTag("HarishRight") )
         {
             _manualFlight.SetBoundaryState(false);
+            _playerMovement.SetActive(false);
             other.GetComponent<Movement>().SetTarget(_previousTarget);
         }
     }

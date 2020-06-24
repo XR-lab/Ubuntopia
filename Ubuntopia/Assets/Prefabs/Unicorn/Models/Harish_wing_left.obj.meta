@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 63545395ba0de2344a42098067e69c56
+=======
+guid: b4c4757c2d2dcff498379b4f3dc3e506
+>>>>>>> Develop
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []

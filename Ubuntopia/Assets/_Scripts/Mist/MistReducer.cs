@@ -1,26 +1,28 @@
-﻿﻿using System.Collections.Generic;
+﻿﻿using System;
+ using System.Collections.Generic;
 using UnityEngine;
 
 public class MistReducer : MonoBehaviour
 {
-    [SerializeField]private List<ParticleSystem> mists;
+    private ParticleSystem mist;
     private bool _reducing;
     [SerializeField]private float mistReducingSpeed;
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
             MistDown();
+    }*/
+    private void Start()
+    {
+        mist = this.GetComponent<ParticleSystem>();
     }
 
     public void MistDown()
     {
-        for (int i = 0; i < mists.Count; i++)
-        {
-            var em = mists[i].emission;//.enabled = false;
-            var main = mists[i].main;
-            em.enabled = false;
-            main.simulationSpeed = mistReducingSpeed;
-        }
+        var em = mist.emission;
+        var main = mist.main;
+        em.enabled = false;
+        main.simulationSpeed = mistReducingSpeed;
     }
 }
