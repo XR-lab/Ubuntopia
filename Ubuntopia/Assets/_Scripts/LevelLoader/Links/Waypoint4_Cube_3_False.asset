@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e06ce7f54d6513847ab405e4820e99c9, type: 3}
-  m_Name: Waypoint3_Cube_4_True
+  m_Name: Waypoint4_Cube_3_False
   m_EditorClassIdentifier: 
-  linkName: Waypoint3_Cube_4_True
-  waypoint: {fileID: 0}
+  linkName: Waypoint4_Cube_3_True
+  waypoint: {fileID: 1689683816301494534, guid: 20c1107f8c41a7843a08c1c07c9f1192,
+    type: 3}
+  waypointName: 
   tile: {fileID: 0}
-  activate: 1
+  tileName: 
+  activate: 0

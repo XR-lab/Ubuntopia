@@ -39,14 +39,10 @@ public class AddWaypointTileLink : Editor {
 			waypoint = EditorGUILayout.ObjectField(waypoint, typeof(GameObject), true);
 			EditorGUILayout.EndHorizontal();
 			
-			// EditorGUILayout.PropertyField(_prop, new GUIContent("Waypoint: "));
-
 			EditorGUILayout.BeginHorizontal();
 			GUILayout.Label("Tile: ");
 			tile = EditorGUILayout.ObjectField(tile, typeof(GameObject), true);
 			EditorGUILayout.EndHorizontal();
-			
-			// EditorGUILayout.PropertyField(_prop, new GUIContent("Tile: "));
 			
 			EditorGUILayout.BeginHorizontal();
 			GUILayout.Label("Activate?");

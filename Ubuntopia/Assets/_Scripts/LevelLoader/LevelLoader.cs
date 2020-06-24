@@ -5,30 +5,62 @@ using UnityEngine;
 
 public class LevelLoader : MonoBehaviour {
     [SerializeField] private WaypointTileData _data;
+    
+    [SerializeField, Tooltip("Drag all waypoints here (from the scene hierarchy).")] 
+    private List<GameObject> allWaypoints;
+    
+    [SerializeField, Tooltip("Drag all level tiles here (from the scene hierarchy).")] 
+    private List<GameObject> allTiles;
 
+    [SerializeField, Tooltip("Drag Harish here.")]
+    private Waypoints _waypoints;
+
+    // For testing purposes, these variables are serialized.
     [SerializeField] private List<GameObject> waypoints;
     [SerializeField] private List<GameObject> tiles;
     [SerializeField] private List<bool> active;
-    
-    private Dictionary<GameObject, bool> tileActivation = new Dictionary<GameObject, bool>();
 
     private void Start() {
         InitializeDictionaries();
+        
+        // Subscribe to event.
+        _waypoints.Arrived += UpdateTiles;
     }
 
+    private void OnDestroy() {
+        // Unsubscribe to avoid bugs when restarting games/scene.
+        _waypoints.Arrived -= UpdateTiles;
+    }
+
+    // Add every waypoints/tiles/booleans to its own list.
     private void InitializeDictionaries() {
         foreach (var obj in _data.waypointTileData) {
-            waypoints.Add(obj.waypoint);
-            tiles.Add(obj.tile);
+            // Loop through all waypoints to match the asset with the gameobject.
+            for (int i = 0; i < allWaypoints.Count; i++) {
+                if (obj.waypoint.name == allWaypoints[i].name) {
+                    waypoints.Add(allWaypoints[i]);
+                }
+            }
+            
+            // Loop through all tiles to match the asset with the gameobject.
+            for (int i = 0; i < allTiles.Count; i++) {
+                if (obj.tile.name == allTiles[i].name) {
+                    tiles.Add(allTiles[i]);
+                }
+            }
+            
             active.Add(obj.activate);
         }
-        
-        // InitializeTiles();
     }
 
-    // private void InitializeTiles() {
-    //     for (int i = 0; i < tiles.Count; i++) {
-    //         tiles[i].SetActive(tileActivation[active[i]]);
-    //     }
-    // }
+    private void UpdateTiles(GameObject obj) {
+        // Loop through our waypoints array.
+        for (int i = 0; i < waypoints.Count; i++) {
+            // If the object matches one of our waypoints..
+            if (obj == waypoints[i]) {
+                // Set the corresponding tile to active or inactive.
+                tiles[i].SetActive(active[i]);
+            }
+        }
+    }
 }

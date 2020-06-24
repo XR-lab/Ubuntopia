@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7236869af591b4f8a33f08ba02e6c4, type: 3}
-  m_Name: _WaypointTileData
+  m_Script: {fileID: 11500000, guid: e06ce7f54d6513847ab405e4820e99c9, type: 3}
+  m_Name: Waypoint3_Cube_2_False
   m_EditorClassIdentifier: 
-  waypointTileData: []
+  linkName: Waypoint3_Cube_2_False
+  waypoint: {fileID: 0}
+  waypointName: 
+  tile: {fileID: 0}
+  tileName: 
+  activate: 0
