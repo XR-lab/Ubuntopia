@@ -23,7 +23,8 @@ public class HandsToWings : MonoBehaviour
 	{
 		for (int i = 0; i < _wingPivots.Length; i++)
 		{
-			_wingPivots[i].rotation = Quaternion.Euler(new Vector3(0,0,1) * (rotationStrength/2) * (i == 0 ? 1 : -1));
+			_wingPivots[i].rotation = Quaternion.Euler(new Vector3(0,0,1) * (rotationStrength*50));
+			_wingPivots[i].Rotate(0, -rotationStrength, 0);
 		}
 	}
 }

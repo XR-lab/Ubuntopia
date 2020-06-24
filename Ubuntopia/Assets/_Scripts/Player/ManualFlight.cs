@@ -5,12 +5,12 @@ public class ManualFlight : MonoBehaviour
 	// _______________________________________________________________________________________/ SerializeField Variables
 	[SerializeField] private Transform _rightHand, _leftHand;
 	[SerializeField] private Transform _player;
+	[SerializeField] private RotationFix _rotationFix;
 	
 	// ______________________________________________________________________________________________/ Private Variables
 	private bool _manualMovementActive = true, _outOffBoundarys = false;
 	private float _maxSpeed;
 	private Movement _movement;
-	private RotationFix _rotationFix;
 	private HandsToWings _handsToWings;
 	
     // __________________________________________________________________________________________________________/ Start
@@ -18,7 +18,6 @@ public class ManualFlight : MonoBehaviour
     {
 	    //_movement = _player.GetComponent<Movement>();
 	    _maxSpeed = 5;//_movement.GetMaxSpeed();
-	    _rotationFix = gameObject.GetComponentInChildren<RotationFix>();
 	    _handsToWings = GetComponent<HandsToWings>();
     }	
 
