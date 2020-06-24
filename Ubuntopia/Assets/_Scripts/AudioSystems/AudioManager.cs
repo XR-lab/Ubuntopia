@@ -62,6 +62,17 @@ public class AudioManager : MonoBehaviour
         }
         Destroy(audioSource);
     }
+    
+    // _________________________________________________________________________________________________________/ Update
+    private void Update() 
+    {
+        foreach (var p in _playing) {
+            if (!p.isPlaying) {
+                _available.Add(p);
+                _playing.Remove(p);
+            }
+        }
+    }
 
     // __________________________________________________________________________________________/ Load Sound Collection
     private void LoadSoundCollection()
@@ -77,25 +88,55 @@ public class AudioManager : MonoBehaviour
     // ___________________________________________________________________________________________________________/ Play
     public void Play(string name)
     {
+        Play(name, transform);
+    }
+    public void Play(string name, Transform target)
+    {
+        if (!CheckAvailable()) return; 
+        
+        SoundClip c = _clips[name];
+        if(c == null){print("No such name found!"); return;}
+        AudioSource s = _available[0];
+        SetSourceVariables(s, c, target);
+    }
+    
+    // ____________________________________________________________________________________________________/ Play Random
+    public void PlayRandom(string name, int numberOfVariations)
+    {
+        int random = Random.Range(0, numberOfVariations);
+        Play(name+random, transform);
+    }
+    public void PlayRandom(string name, int numberOfVariations, Transform target)
+    {
+        int random = Random.Range(0, numberOfVariations);
+        Play(name+random, target);
+    }
+
+    // ________________________________________________________________________________________________/ Check Available
+    private bool CheckAvailable()
+    {
         if (_available.Count != 0)
-        {
-            SoundClip c = _clips[name];
-            if(c == null){print("No such name found!"); return;}
-            AudioSource s = _available[0];
-            s.clip = c.clip;
-            s.volume = c.volume;
-            s.pitch = c.pitch;
-            s.loop = c.loop;
-            s.playOnAwake = c.playOnAwake;
-            s.spatialBlend = c.spatialBlend;
-            s.Play();
-            _playing.Add(s);
-            _available.RemoveAt(0);
-        }
+            return true;
         else
         {
             print("no available audio players at this moment");
+            return false;
         }
+    }
+
+    // __________________________________________________________________________________________________/ Set Variables
+    private void SetSourceVariables(AudioSource s, SoundClip c, Transform target)
+    {
+        s.clip = c.clip;
+        s.volume = c.volume;
+        s.pitch = c.pitch;
+        s.loop = c.loop;
+        s.playOnAwake = c.playOnAwake;
+        s.spatialBlend = c.spatialBlend;
+        s.transform.parent = target;
+        s.Play();
+        _playing.Add(s);
+        _available.RemoveAt(0);
     }
     
     // ___________________________________________________________________________________________________________/ Stop
