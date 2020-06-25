@@ -569,6 +569,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 403959670}
     m_Modifications:
+    - target: {fileID: 1405345377, guid: 84c852c4df0d5cc4aa9075416ae3bfd2, type: 3}
+      propertyPath: m_Height
+      value: 0.79936814
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405345377, guid: 84c852c4df0d5cc4aa9075416ae3bfd2, type: 3}
+      propertyPath: m_Center.z
+      value: 1.0942281
+      objectReference: {fileID: 0}
     - target: {fileID: 1428550794205901043, guid: 84c852c4df0d5cc4aa9075416ae3bfd2,
         type: 3}
       propertyPath: m_Name
@@ -886,7 +894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583084709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.44, z: 0.5}
+  m_LocalPosition: {x: 0, y: 2.44, z: 0.341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1094860750}
@@ -940,6 +948,7 @@ MonoBehaviour:
   _rightHand: {fileID: 679056660}
   _leftHand: {fileID: 59954223}
   _player: {fileID: 2119663681}
+  _rotationFix: {fileID: 0}
 --- !u!114 &583084714
 MonoBehaviour:
   m_ObjectHideFlags: 0
