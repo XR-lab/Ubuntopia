@@ -4,7 +4,8 @@ public class ControllerInput : MonoBehaviour
 {
     [SerializeField] private float maxTime;
     [SerializeField] private OVRInput.Button holdbutton;
-    [SerializeField] private IntroManager _introManager;
+    //[SerializeField] private IntroManager _introManager;
+    [SerializeField] private SceneSwitcher _sceneSwitcher;
 
     private bool _startIenumerator = true;
     private float currentTime = 0f;
@@ -18,7 +19,8 @@ public class ControllerInput : MonoBehaviour
         else if (_startIenumerator)
         {
             _startIenumerator = false;
-            _introManager.StartIntro();
+            //_introManager.StartIntro();
+            _sceneSwitcher.SwitchScenes();
         }
     }
 

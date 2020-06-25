@@ -8,9 +8,13 @@ public class IntroManager : MonoBehaviour
     
     [SerializeField]
     private SceneSwitcher _sceneSwitcher;
+
+    private Timer _timer;
     
     void Start()
     {
+        _timer = FindObjectOfType<Timer>();
+        nextPhase += _timer.StartTimer;
         nextPhase += _sceneSwitcher.SwitchScenes;
     }
 
