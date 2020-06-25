@@ -14,9 +14,7 @@ public class HandsToWings : MonoBehaviour
 	{
 		for (int i = 0; i < _wingPivots.Length; i++)
 		{
-			Vector3 rot = _wingPivots[i].localEulerAngles;
-			rot.z = rotationStrength*50;
-			_wingPivots[i].localEulerAngles = rot;
+			_wingPivots[i].localEulerAngles = Vector3.forward * (rotationStrength*50);
 		}
 	}
 }
