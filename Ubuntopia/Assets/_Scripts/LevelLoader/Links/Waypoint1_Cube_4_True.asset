@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Waypoint1_Cube_4_True
   m_EditorClassIdentifier: 
   linkName: Waypoint1_Cube_4_True
-  waypoint: {fileID: 0}
-  waypointName: 
-  tile: {fileID: 0}
-  tileName: 
+  waypoint: {fileID: 7091111774284297508, guid: bf0f358ad6f7d5b4f80ad5906f9bd9c5,
+    type: 3}
+  tile: {fileID: 3415201305424622912, guid: c93e46beed8b6ae4685683a62a5faee3, type: 3}
   activate: 1

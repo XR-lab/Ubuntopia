@@ -57,9 +57,10 @@ public class LevelLoader : MonoBehaviour {
         // Loop through our waypoints array.
         for (int i = 0; i < waypoints.Count; i++) {
             // If the object matches one of our waypoints..
-            if (obj == waypoints[i]) {
+            if (obj.name == waypoints[i].name) {
                 // Set the corresponding tile to active or inactive.
                 tiles[i].SetActive(active[i]);
+                print("obj: " + obj + " waypoint: " + waypoints[i] + ", tile: " + tiles[i]);
             }
         }
     }
