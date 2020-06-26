@@ -1,24 +1,25 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    private Transform _collectible;
-    private MistReducer _mistReducer;
+    private GameObject[] _collectible;
 
     public float minDistance;
     
    private void Start()
    {
-       _collectible = GameObject.FindWithTag("Relic").GetComponent<Transform>();
-       _mistReducer = GameObject.FindWithTag("MistManager").GetComponent<MistReducer>();
+       _collectible = GameObject.FindGameObjectsWithTag("Relic");
    }
 
    private void FixedUpdate()
    {
-       if (Vector3.Distance(this.gameObject.transform.position, _collectible.position) <= minDistance)
+       for (int i = 0; i <= _collectible.Length; i++)
        {
-           _collectible.gameObject.GetComponent<Collect>().Collected();
-           _mistReducer.MistDown();
+           if (Vector3.Distance(this.gameObject.transform.position, _collectible[i].transform.position) <= minDistance)
+           {
+               _collectible[i].GetComponent<Collect>().Collected();
+           }
        }
    }    
 }
