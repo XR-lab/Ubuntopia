@@ -31,8 +31,6 @@ public class Movement : MonoBehaviour {
         // Initialize variables.
         currentTargetIndex = 0;
         currentVelocity = new Vector3(0, 0, 0);
-        currentPosition = player.transform.position;
-        currentTargetPosition = currentTarget.transform.position;
     }
 
     private void FixedUpdate() {
@@ -107,6 +105,8 @@ public class Movement : MonoBehaviour {
     public void SetActive(bool state)
     {
         isMoving = state;
+        currentPosition = player.transform.position;
+        currentTargetPosition = currentTarget.transform.position;
     }
 
     public float GetMaxSpeed()

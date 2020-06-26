@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class BackToRoad : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _correctionTarget;
-    private GameObject _previousTarget;
     private Movement _playerMovement;
     private ManualFlight _manualFlight;
 
@@ -16,30 +14,19 @@ public class BackToRoad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("HarishLeft"))
+        if (other.transform.CompareTag("Harish"))
         {
             _manualFlight.SetBoundaryState(true);
-            _previousTarget = _playerMovement.GetTarget();
             _playerMovement.SetActive(true);
-            _playerMovement.SetTarget(_correctionTarget[0]);
-        }
-
-        if (other.transform.CompareTag("HarishRight"))
-        {
-            _manualFlight.SetBoundaryState(true);
-            _previousTarget = _playerMovement.GetTarget();
-            _playerMovement.SetActive(true);
-            _playerMovement.SetTarget(_correctionTarget[1]);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.CompareTag("HarishLeft") || other.transform.CompareTag("HarishRight") )
+        if (other.transform.CompareTag("Harish"))
         {
             _manualFlight.SetBoundaryState(false);
             _playerMovement.SetActive(false);
-            other.GetComponent<Movement>().SetTarget(_previousTarget);
         }
     }
 }
