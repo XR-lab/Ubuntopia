@@ -42,4 +42,8 @@ public class Waypoints : MonoBehaviour {
         // Set new target.
         _movement.SetTarget(newTarget);
     }
+
+    public GameObject GetFirstWaypoint() {
+        return waypoints[0];
+    }
 }

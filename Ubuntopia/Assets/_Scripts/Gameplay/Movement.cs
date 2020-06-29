@@ -2,13 +2,9 @@
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
-    [SerializeField, Tooltip("Drag Harish here.")]
+    [SerializeField, Tooltip("Drag Harish here (from scene hierarchy).")]
     private GameObject player;
-    
-    [SerializeField, Tooltip("Drag first waypoint here.")] 
-    private GameObject currentTarget;
-    private int currentTargetIndex;
-    
+
     // Gameplay values.
     private bool isMoving = true;
     private bool isFlying = false;
@@ -16,6 +12,8 @@ public class Movement : MonoBehaviour {
     private float rotationSpeed = 1f;
     
     // Player values.
+    private GameObject currentTarget;
+    private int currentTargetIndex;
     private Vector3 currentVelocity;
     private Vector3 currentPosition;
     private Vector3 currentTargetPosition;
@@ -26,9 +24,14 @@ public class Movement : MonoBehaviour {
     
     // Action.
     public Action<int> Arrived;
+    
+    // References.
+    [SerializeField, Tooltip("Drag Harish here (from scene hierarchy).")]
+    private Waypoints _waypoints;
 
     private void Start() {
         // Initialize variables.
+        currentTarget = _waypoints.GetFirstWaypoint();
         currentTargetIndex = 0;
         currentVelocity = new Vector3(0, 0, 0);
         currentPosition = player.transform.position;
