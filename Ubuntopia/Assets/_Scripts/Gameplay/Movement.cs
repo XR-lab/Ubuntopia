@@ -6,7 +6,8 @@ public class Movement : MonoBehaviour {
     private GameObject player;
     // [Tooltip("Drag Rotating here.")]
     // [SerializeField] private GameObject playerRot;
-    [SerializeField] private GameObject currentTarget;
+    [SerializeField, Tooltip("Drag first waypoint here.")] 
+    private GameObject currentTarget;
     private int currentTargetIndex;
     
     // Gameplay values.

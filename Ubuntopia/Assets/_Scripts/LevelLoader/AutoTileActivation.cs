@@ -13,33 +13,28 @@ public class AutoTileActivation : MonoBehaviour {
     private GameObject waypointParent;
 
     [SerializeField, Tooltip("How many tiles should be visable in front the player.")]
-    private int limit = 3;
+    private int limit = 1;
 
-    [SerializeField, Tooltip("How many tiles to show on load.")]
-    private int onLoad = 4;
-    
     private List<GameObject> waypoints = new List<GameObject>();
     private List<GameObject> tiles = new List<GameObject>();
     private Dictionary<GameObject, GameObject> waypointTileMap = new Dictionary<GameObject, GameObject>();
-    private Dictionary<GameObject, bool> tileActiveMap = new Dictionary<GameObject, bool>();
-    
+
     // References.
     [SerializeField, Tooltip("Drag Harish here (from scene hierarchy).")]
-    private Waypoints _waypoints;
+    private Waypoints _playerWaypoints;
 
     private void Start() {
        InitializeWaypointList();
        InitializeTilesList();
        LinkWaypointWithTiles();
-       LoadTilesOnStart();
 
        // Subscribe to event.
-       _waypoints.Arrived += SetActiveStateForTile;
+       _playerWaypoints.Arrived += SetActiveStateForTile;
     }
 
     // Unsubscribe from event on destroy.
     private void OnDestroy() {
-        _waypoints.Arrived -= SetActiveStateForTile;
+        _playerWaypoints.Arrived -= SetActiveStateForTile;
     }
 
     private void InitializeWaypointList() {
@@ -51,7 +46,6 @@ public class AutoTileActivation : MonoBehaviour {
     private void InitializeTilesList() {
         foreach (Transform obj in tilesParent.transform) {
             tiles.Add(obj.gameObject);
-            tileActiveMap.Add(obj.gameObject, obj.gameObject.activeInHierarchy);
         }
     }
 
@@ -69,13 +63,6 @@ public class AutoTileActivation : MonoBehaviour {
                     print("Link created! " + waypoints[i] + " + " + tiles[t]);
                 }
             }
-        }
-    }
-    
-    // Load x amount of tiles at the start of the game.
-    private void LoadTilesOnStart() {
-        for (int i = 0; i < onLoad; i++) {
-            tiles[i].GetComponent<MeshRenderer>().enabled = true;
         }
     }
 
