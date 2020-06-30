@@ -2,14 +2,9 @@
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
-    [SerializeField, Tooltip("Drag Harish here.")]
+    [SerializeField, Tooltip("Drag Harish here (from scene hierarchy).")]
     private GameObject player;
-    // [Tooltip("Drag Rotating here.")]
-    // [SerializeField] private GameObject playerRot;
-    [SerializeField, Tooltip("Drag first waypoint here.")] 
-    private GameObject currentTarget;
-    private int currentTargetIndex;
-    
+
     // Gameplay values.
     private bool isMoving = true;
     private bool isFlying = false;
@@ -17,6 +12,8 @@ public class Movement : MonoBehaviour {
     private float rotationSpeed = 1f;
     
     // Player values.
+    private GameObject currentTarget;
+    private int currentTargetIndex;
     private Vector3 currentVelocity;
     private Vector3 currentPosition;
     private Vector3 currentTargetPosition;
@@ -27,9 +24,15 @@ public class Movement : MonoBehaviour {
     
     // Action.
     public Action<int> Arrived;
+    
+    // References.
+    [SerializeField, Tooltip("Drag Harish here (from scene hierarchy).")]
+    private Waypoints _waypoints;
 
     private void Start() {
         // Initialize variables.
+        _waypoints.ForcedStart();
+        currentTarget = _waypoints.GetFirstWaypoint();
         currentTargetIndex = 0;
         currentVelocity = new Vector3(0, 0, 0);
         currentPosition = player.transform.position;
@@ -49,6 +52,9 @@ public class Movement : MonoBehaviour {
     }
 
     private void Move() {
+        // get position
+        currentPosition = transform.position;
+        
         // Distance to target.
         var desiredStep = currentTargetPosition- currentPosition;
         desiredStep.Normalize();
@@ -91,8 +97,7 @@ public class Movement : MonoBehaviour {
     }
     
     // Returns -1 when to the left, 1 to the right, and 0 for forward/backward
-    public float AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up)
-    {
+    public float AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up) {
         Vector3 perp = Vector3.Cross(fwd, targetDir);
         float dir = Vector3.Dot(perp, up);
  
@@ -105,14 +110,16 @@ public class Movement : MonoBehaviour {
         }
     }
 
-    public void SetActive(bool state)
-    {
+    public void SetActive(bool state) {
         isMoving = state;
     }
 
-    public float GetMaxSpeed()
-    {
+    public float GetMaxSpeed() {
         return maxSpeed;
+    }
+    
+    public GameObject GetTarget() {
+        return currentTarget;
     }
     
     
@@ -133,9 +140,4 @@ public class Movement : MonoBehaviour {
     //     0.01f, 
     //     0f);
     // transform.rotation = Quaternion.LookRotation(newDirection);
-
-    public GameObject GetTarget()
-    {
-        return currentTarget;
-    }
 }
