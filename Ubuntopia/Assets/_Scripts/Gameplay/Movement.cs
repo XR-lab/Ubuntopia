@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour {
 
     private void Start() {
         // Initialize variables.
+        _waypoints.ForcedStart();
         currentTarget = _waypoints.GetFirstWaypoint();
         currentTargetIndex = 0;
         currentVelocity = new Vector3(0, 0, 0);
@@ -51,6 +52,9 @@ public class Movement : MonoBehaviour {
     }
 
     private void Move() {
+        // get position
+        currentPosition = transform.position;
+        
         // Distance to target.
         var desiredStep = currentTargetPosition- currentPosition;
         desiredStep.Normalize();

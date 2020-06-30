@@ -14,7 +14,7 @@ public class Waypoints : MonoBehaviour {
     [Tooltip("Drag Harish here.")] [SerializeField]
     private Movement _movement;
 
-    private void Start() {
+    public void ForcedStart() {
         InitializeWaypointList();
         
         // Subscribe to event.
