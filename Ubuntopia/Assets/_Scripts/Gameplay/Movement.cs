@@ -28,6 +28,8 @@ public class Movement : MonoBehaviour {
     // References.
     [SerializeField, Tooltip("Drag Harish here (from scene hierarchy).")]
     private Waypoints _waypoints;
+    [SerializeField]
+    private RotationFix _rotationFix;
 
     private void Start() {
         // Initialize variables.
@@ -53,7 +55,7 @@ public class Movement : MonoBehaviour {
 
     private void Move() {
         // get position
-        currentPosition = transform.position;
+        currentPosition = player.transform.position;
         
         // Distance to target.
         var desiredStep = currentTargetPosition- currentPosition;
@@ -71,8 +73,12 @@ public class Movement : MonoBehaviour {
         transform.position = currentPosition;
 
         // Look towards.
+        float start = transform.rotation.eulerAngles.y;
         Quaternion lookAt = Quaternion.LookRotation(desiredStep);
         transform.rotation = Quaternion.Lerp(transform.rotation, lookAt, Time.deltaTime * rotationSpeed);
+        float difrence = transform.rotation.eulerAngles.y - start;
+        _rotationFix.Rotate(difrence);
+        
 
         // Tilt sideways (doesn't work yet).
         // TiltObject(player, playerRot, currentTargetPosition);
