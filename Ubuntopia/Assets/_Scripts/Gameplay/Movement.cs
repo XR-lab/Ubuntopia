@@ -6,11 +6,12 @@ public class Movement : MonoBehaviour {
     private GameObject player;
     // [Tooltip("Drag Rotating here.")]
     // [SerializeField] private GameObject playerRot;
-    [SerializeField] private GameObject currentTarget;
+    [SerializeField, Tooltip("Drag first waypoint here.")] 
+    private GameObject currentTarget;
     private int currentTargetIndex;
     
     // Gameplay values.
-    private bool isMoving = false;
+    private bool isMoving = true;
     private bool isFlying = false;
     private float arrivalDistance = 1f;
     private float rotationSpeed = 1f;
