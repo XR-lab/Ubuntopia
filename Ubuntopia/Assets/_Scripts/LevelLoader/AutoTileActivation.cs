@@ -6,6 +6,11 @@ using UnityEditor;
 using UnityEngine;
 
 public class AutoTileActivation : MonoBehaviour {
+    /// <summary>
+    /// To use this script, you must place the waypoints in the correct order in the __Waypoints parent.
+    /// Also, every tile must be placed in the correct order in the __Tiles parent.
+    /// </summary>
+    
     [SerializeField, Tooltip("Drag tiles parent GameObject here")]
     private GameObject tilesParent;
     
@@ -60,7 +65,7 @@ public class AutoTileActivation : MonoBehaviour {
                 if (hit.collider == tiles[t].GetComponent<Collider>()) {
                     // Create link between waypoint and tile.
                     waypointTileMap.Add(waypoints[i], tiles[t]);
-                    print("Link created! " + waypoints[i] + " + " + tiles[t]);
+                    // print("Link created! " + waypoints[i] + " + " + tiles[t]);
                 }
             }
         }
@@ -81,12 +86,24 @@ public class AutoTileActivation : MonoBehaviour {
                         if (l < tiles.Count) {
                             // In front of the player.
                             tiles[l].GetComponent<MeshRenderer>().enabled = true;
+                            // If the tile has children, enable children meshrenderers aswell.
+                            if (tiles[l].transform.childCount > 0) {
+                                foreach (Transform child in tiles[l].transform) {
+                                    child.GetComponent<MeshRenderer>().enabled = true;
+                                }
+                            }
                             
                             // Behind the player.
                             // Create new variable based on current limit, to calculate tile integer behind the player.
                             int b = l - limit;
                             if (b >= 0) {
                                 tiles[b].GetComponent<MeshRenderer>().enabled = true;
+                                // If the tile has children, enable children meshrenderers aswell.
+                                if (tiles[b].transform.childCount > 0) {
+                                    foreach (Transform child in tiles[b].transform) {
+                                        child.GetComponent<MeshRenderer>().enabled = true;
+                                    }
+                                }
                             }
                         }
                     }
@@ -96,6 +113,12 @@ public class AutoTileActivation : MonoBehaviour {
                 
                 // Deactivate tiles until reaching the back-limit.
                 tiles[i].GetComponent<MeshRenderer>().enabled = false;
+                // If the tile has children, disable children MeshRenderers aswell.
+                if (tiles[i].transform.childCount > 0) {
+                    foreach (Transform child in tiles[i].transform) {
+                        child.GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
             }
         }
     }
