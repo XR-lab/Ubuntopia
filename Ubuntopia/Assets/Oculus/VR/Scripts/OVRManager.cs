@@ -1477,9 +1477,9 @@ public class OVRManager : MonoBehaviour
 
 		if (useRecommendedMSAALevel && QualitySettings.antiAliasing != display.recommendedMSAALevel)
 		{
-			Debug.Log("The current MSAA level is " + QualitySettings.antiAliasing +
-			", but the recommended MSAA level is " + display.recommendedMSAALevel +
-			". Switching to the recommended level.");
+			//Debug.Log("The current MSAA level is " + QualitySettings.antiAliasing +
+			//", but the recommended MSAA level is " + display.recommendedMSAALevel +
+			//". Switching to the recommended level.");
 
 			QualitySettings.antiAliasing = display.recommendedMSAALevel;
 		}
@@ -1806,11 +1806,11 @@ public class OVRManager : MonoBehaviour
 
 		if (result != null)
 		{
-			Debug.LogFormat("[OVRManager] mainCamera found for MRC: ", result.gameObject.name);
+			//Debug.LogFormat("[OVRManager] mainCamera found for MRC: ", result.gameObject.name);
 		}
 		else
 		{
-			Debug.Log("[OVRManager] unable to find a vaild camera");
+			//Debug.Log("[OVRManager] unable to find a vaild camera");
 		}
 		lastFoundMainCamera = result;
 		return result;
@@ -1837,7 +1837,7 @@ public class OVRManager : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		Debug.Log("[OVRManager] OnDestroy");
+		//Debug.Log("[OVRManager] OnDestroy");
 		OVRManagerinitialized = false;
 	}
 
@@ -1845,11 +1845,11 @@ public class OVRManager : MonoBehaviour
 	{
 		if (pause)
 		{
-			Debug.Log("[OVRManager] OnApplicationPause(true)");
+			//Debug.Log("[OVRManager] OnApplicationPause(true)");
 		}
 		else
 		{
-			Debug.Log("[OVRManager] OnApplicationPause(false)");
+			//Debug.Log("[OVRManager] OnApplicationPause(false)");
 		}
 	}
 
@@ -1857,17 +1857,17 @@ public class OVRManager : MonoBehaviour
 	{
 		if (focus)
 		{
-			Debug.Log("[OVRManager] OnApplicationFocus(true)");
+			//Debug.Log("[OVRManager] OnApplicationFocus(true)");
 		}
 		else
 		{
-			Debug.Log("[OVRManager] OnApplicationFocus(false)");
+			//Debug.Log("[OVRManager] OnApplicationFocus(false)");
 		}
 	}
 
 	private void OnApplicationQuit()
 	{
-		Debug.Log("[OVRManager] OnApplicationQuit");
+		//Debug.Log("[OVRManager] OnApplicationQuit");
 	}
 
 #endregion // Unity Messages

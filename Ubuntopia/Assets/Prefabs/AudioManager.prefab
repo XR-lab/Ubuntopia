@@ -78,4 +78,3 @@ MonoBehaviour:
   maxTime: 5
   numberOfVariations: 0
   _audioManager: {fileID: 613183548570414579}
-  _movement: {fileID: 0}
