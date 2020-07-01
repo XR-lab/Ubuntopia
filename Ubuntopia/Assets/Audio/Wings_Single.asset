@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 555d677c2c3ab5a40b8a1c9c7cb4e9db, type: 3}
-  m_Name: Wind0
+  m_Name: Wings_Single
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 92457a33a19632c42a07287fcb8ab63b, type: 3}
-  volume: 0.25
+  clip: {fileID: 8300000, guid: b821e2d98893df64f9567088667a6d32, type: 3}
+  volume: 0.5
   pitch: 1
   loop: 0
   playOnAwake: 0
