@@ -1,8 +1,12 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+guid: 89768e490aeeab040ad9a6c967d93348
+=======
+<<<<<<< HEAD
 guid: 1a67220060a6d2e42a5e0b9e820390e4
 =======
 guid: b1712c0e94ee76f419f4c66815d609c2
+>>>>>>> Develop
 >>>>>>> Develop
 TextureImporter:
   internalIDToNameTable: []
@@ -76,6 +80,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -102,6 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
 =======
 >>>>>>> Develop
+>>>>>>> Develop
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -109,9 +116,13 @@ TextureImporter:
     physicsShape: []
     bones: []
 <<<<<<< HEAD
+    spriteID: 
+=======
+<<<<<<< HEAD
     spriteID: 5e97eb03825dee720800000000000000
 =======
     spriteID: 
+>>>>>>> Develop
 >>>>>>> Develop
     internalID: 0
     vertices: []
