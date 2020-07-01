@@ -43,13 +43,19 @@ public class AutoTileActivation : MonoBehaviour {
     }
 
     private void InitializeWaypointList() {
+        int counter = 0;
         foreach (Transform obj in waypointParent.transform) {
+            obj.gameObject.name = "Waypoint_" + counter;
+            counter++;
             waypoints.Add(obj.gameObject);
         }
     }
 
     private void InitializeTilesList() {
+        int counter = 0;
         foreach (Transform obj in tilesParent.transform) {
+            obj.gameObject.name = "Tile_" + counter;
+            counter++;
             tiles.Add(obj.gameObject);
         }
     }
