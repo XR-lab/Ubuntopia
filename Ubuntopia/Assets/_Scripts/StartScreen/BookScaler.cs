@@ -8,12 +8,14 @@ public class BookScaler : MonoBehaviour
     private bool _switch = false;
     private float _time = 0f;
     private Vector3 _originalScale;
+    private Vector3 _originalPos;
     private Quaternion _originalRot;
     private Vector3 _difScale;
     
     void Start()
     {
         _originalScale = _book.transform.localScale;
+        _originalPos = _book.transform.position;
         _originalRot = _book.transform.rotation;
         _difScale = _wantedTransform.localScale - _originalScale;
     }
@@ -28,6 +30,7 @@ public class BookScaler : MonoBehaviour
             float scaleMultiplier = currentTime / clipInfo[0].clip.length;
             _book.transform.localScale = _originalScale + (_difScale * scaleMultiplier);
             _book.transform.rotation = Quaternion.Slerp(_originalRot, _wantedTransform.rotation, scaleMultiplier);
+            _book.transform.position = Vector3.Lerp(_originalPos, _wantedTransform.position, scaleMultiplier);
         }
     }
 }
