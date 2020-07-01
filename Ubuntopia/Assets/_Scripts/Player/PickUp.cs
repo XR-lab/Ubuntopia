@@ -6,7 +6,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] private List<GameObject> _collectible;
     private int _amountCollected = 0;
 
-    public float minDistance;
+    [SerializeField] private float minDistance;
 
     private void FixedUpdate()
    {

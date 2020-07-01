@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ToggleWings : MonoBehaviour {
     [SerializeField, Tooltip("Drag manual flying wings here (from scene hierarchy).")]
@@ -15,15 +14,9 @@ public class ToggleWings : MonoBehaviour {
         ToggleObject(manual);
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.T)) {
-            Toggle();
-            ToggleObject(manual);
-        }
-    }
-
     public void Toggle() {
         manual = !manual;
+        ToggleObject(manual);
     }
 
     private void ToggleObject(bool b) {

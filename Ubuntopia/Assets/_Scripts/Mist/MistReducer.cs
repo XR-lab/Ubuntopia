@@ -4,7 +4,7 @@ public class MistReducer : MonoBehaviour
 {
     private ParticleSystem mist;
     private bool _reducing;
-    [SerializeField]private float mistReducingSpeed;
+    [SerializeField]private float mistReducingSpeed = 0.7f;
 
     private void Update()
     {
