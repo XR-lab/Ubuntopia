@@ -9,6 +9,7 @@ public class Waypoints : MonoBehaviour {
 
     // Action.
     public Action<GameObject> Arrived;
+    public Action LastWaypoint;
 
     // References.
     [Tooltip("Drag Harish here.")] [SerializeField]
@@ -37,10 +38,18 @@ public class Waypoints : MonoBehaviour {
         Arrived.Invoke(waypoints[old]);
 
         // Find the next waypoint in the array.
-        GameObject newTarget = waypoints[(old + 1)];
-
-        // Set new target.
-        _movement.SetTarget(newTarget);
+        if (waypoints[(old + 1)] != null) {
+            GameObject newTarget = waypoints[(old + 1)];
+            
+            // Set new target.
+            _movement.SetTarget(newTarget);
+            
+            // Stop rest of the function.
+            return;
+        }
+        
+        // If code reaches this part, we have reached second to last waypoint. Announce it.
+        LastWaypoint.Invoke();
     }
 
     public GameObject GetFirstWaypoint() {

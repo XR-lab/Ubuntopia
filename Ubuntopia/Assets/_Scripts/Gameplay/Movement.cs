@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
@@ -39,7 +40,16 @@ public class Movement : MonoBehaviour {
         currentVelocity = new Vector3(0, 0, 0);
         currentPosition = player.transform.position;
         currentTargetPosition = currentTarget.transform.position;
+        
+        // Subscribe to event.
+        _waypoints.LastWaypoint += StopMoving;
     }
+
+    // Unsubscribe from event.
+    private void OnDestroy() {
+        _waypoints.LastWaypoint -= StopMoving;
+    }
+
 
     private void FixedUpdate() {
         if (isMoving) {
@@ -126,6 +136,11 @@ public class Movement : MonoBehaviour {
     
     public GameObject GetTarget() {
         return currentTarget;
+    }
+
+    // Upon reaching last waypoint, stop moving.
+    private void StopMoving() {
+        isMoving = false;
     }
     
     
