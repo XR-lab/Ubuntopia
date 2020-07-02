@@ -22,25 +22,25 @@ public class ManualFlight : MonoBehaviour
     }	
 
     // _________________________________________________________________________________________________________/ Update
-    private void Update()
-    {
-	    if(_outOffBoundarys) return;
-	    if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f)
-	    {
-		    Move();
-		    if (_manualMovementActive) return;
-		    _manualMovementActive = true;
-			_movement.SetActive(false);
-			_toggle.Toggle();
-	    }
-	    else
-	    {
-		    if (!_manualMovementActive) return;
-		    _manualMovementActive = false;
-			_movement.SetActive(true);
-			_toggle.Toggle();
-	    }
-    }
+   //  private void Update()
+   //  {
+	  //   if(_outOffBoundarys) return;
+	  //   if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f)
+	  //   {
+		 //    Move();
+		 //    if (_manualMovementActive) return;
+		 //    _manualMovementActive = true;
+			// _movement.SetActive(false);
+			// _toggle.Toggle();
+	  //   }
+	  //   else
+	  //   {
+		 //    if (!_manualMovementActive) return;
+		 //    _manualMovementActive = false;
+			// _movement.SetActive(true);
+			// _toggle.Toggle();
+	  //   }
+   //  }
     
     // ___________________________________________________________________________________________________________/ Move
     private void Move()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Waypoints : MonoBehaviour {
     [SerializeField, Tooltip("Drag waypoints parent GameObject here")]
@@ -50,6 +51,7 @@ public class Waypoints : MonoBehaviour {
         
         // If code reaches this part, we have reached second to last waypoint. Announce it.
         LastWaypoint.Invoke();
+        SceneManager.LoadScene("EndScreen");
     }
 
     public GameObject GetFirstWaypoint() {
