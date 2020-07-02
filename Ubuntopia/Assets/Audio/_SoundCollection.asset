@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: _SoundCollection
   m_EditorClassIdentifier: 
   soundCollection:
-  - {fileID: 11400000, guid: 39da8f0e2780e364a8042520d0f22061, type: 2}
   - {fileID: 11400000, guid: 31006309b51f35f4fbb063aa9ce52099, type: 2}
   - {fileID: 11400000, guid: 8c56000623afe8243b3a9b8cf4182886, type: 2}
   - {fileID: 11400000, guid: b78487a5ebdc0d741b1e77e191e2b87b, type: 2}
@@ -21,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 167c85422d1f2c243909af98e5434dc9, type: 2}
   - {fileID: 11400000, guid: 1aac016071a3d56449ba90b87757e61c, type: 2}
   - {fileID: 11400000, guid: 87684d4d2f8716b44b27fd8f728ba5e2, type: 2}
+  - {fileID: 11400000, guid: 2deecc4aac390b4408786c3edb81d5b6, type: 2}
