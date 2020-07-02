@@ -92,10 +92,10 @@ public class AutoTileActivation : MonoBehaviour {
                         if (l < tiles.Count) {
                             // In front of the player.
                             tiles[l].GetComponent<MeshRenderer>().enabled = true;
-                            // If the tile has children, enable children meshrenderers aswell.
+                            // If the tile has children, disable children gameobjects.
                             if (tiles[l].transform.childCount > 0) {
                                 foreach (Transform child in tiles[l].transform) {
-                                    child.GetComponent<MeshRenderer>().enabled = true;
+                                    child.gameObject.SetActive(true);
                                 }
                             }
                             
@@ -104,10 +104,10 @@ public class AutoTileActivation : MonoBehaviour {
                             int b = l - limit;
                             if (b >= 0) {
                                 tiles[b].GetComponent<MeshRenderer>().enabled = true;
-                                // If the tile has children, enable children meshrenderers aswell.
+                                // If the tile has children, disable children gameobjects.
                                 if (tiles[b].transform.childCount > 0) {
                                     foreach (Transform child in tiles[b].transform) {
-                                        child.GetComponent<MeshRenderer>().enabled = true;
+                                        child.gameObject.SetActive(true);
                                     }
                                 }
                             }
@@ -119,10 +119,10 @@ public class AutoTileActivation : MonoBehaviour {
                 
                 // Deactivate tiles until reaching the back-limit.
                 tiles[i].GetComponent<MeshRenderer>().enabled = false;
-                // If the tile has children, disable children MeshRenderers aswell.
+                // If the tile has children, disable children gameobjects.
                 if (tiles[i].transform.childCount > 0) {
                     foreach (Transform child in tiles[i].transform) {
-                        child.GetComponent<MeshRenderer>().enabled = false;
+                        child.gameObject.SetActive(false);
                     }
                 }
             }
