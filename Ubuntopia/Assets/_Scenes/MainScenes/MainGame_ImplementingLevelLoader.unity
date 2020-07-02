@@ -9104,6 +9104,11 @@ PrefabInstance:
       propertyPath: artifactMist
       value: 
       objectReference: {fileID: 539390289}
+    - target: {fileID: 6071960356264133421, guid: ec177c33b7ee1f547825f1dd96708419,
+        type: 3}
+      propertyPath: stopTime
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec177c33b7ee1f547825f1dd96708419, type: 3}
 --- !u!1 &6579819604997926373
