@@ -13,8 +13,7 @@ public class Movement : MonoBehaviour {
     private float rotationSpeed = 1f;
     
     // Player values.
-    private GameObject currentTarget;
-    private int currentTargetIndex;
+    [SerializeField] private GameObject currentTarget;
     private Vector3 currentVelocity;
     private Vector3 currentPosition;
     private Vector3 currentTargetPosition;
@@ -24,7 +23,7 @@ public class Movement : MonoBehaviour {
     private float mass = 10f;
     
     // Action.
-    public Action<int> Arrived;
+    public Action<GameObject> Arrived;
     
     // References.
     [SerializeField, Tooltip("Drag Harish here (from scene hierarchy).")]
@@ -36,7 +35,6 @@ public class Movement : MonoBehaviour {
         // Initialize variables.
         _waypoints.ForcedStart();
         currentTarget = _waypoints.GetFirstWaypoint();
-        currentTargetIndex = 0;
         currentVelocity = new Vector3(0, 0, 0);
         currentPosition = player.transform.position;
         currentTargetPosition = currentTarget.transform.position;
@@ -60,7 +58,6 @@ public class Movement : MonoBehaviour {
     public void SetTarget(GameObject obj) {
         currentTarget = obj;
         currentTargetPosition = currentTarget.transform.position;
-        currentTargetIndex++;
     }
 
     private void Move() {
@@ -95,7 +92,7 @@ public class Movement : MonoBehaviour {
 
         // Announce we have reached target, get new target.
         if (Vector3.Distance(currentTarget.transform.position, currentPosition) < arrivalDistance) {
-            Arrived.Invoke(currentTargetIndex);
+            Arrived.Invoke(currentTarget);
         }
     }
 
@@ -142,8 +139,15 @@ public class Movement : MonoBehaviour {
     private void StopMoving() {
         isMoving = false;
     }
-    
-    
+
+    private void OnDrawGizmos() {
+        if (currentTarget != null) {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, currentTarget.transform.position);
+        }
+    }
+
+
     // Look towards (works).
     // transform.LookAt(currentTargetPosition);
         

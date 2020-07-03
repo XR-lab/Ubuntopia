@@ -8,11 +8,12 @@ public class ManualFlight : MonoBehaviour
 	[SerializeField] private RotationFix _rotationFix;
 	[SerializeField] private Movement _movement;
 	[SerializeField] private ToggleWings _toggle;
-	
+
 	// ______________________________________________________________________________________________/ Private Variables
 	private bool _manualMovementActive = false, _outOffBoundarys = false;
 	private float _maxSpeed;
 	private HandsToWings _handsToWings;
+	[SerializeField] private bool testToggle = false;
 	
     // __________________________________________________________________________________________________________/ Start
     private void Start()
@@ -22,25 +23,26 @@ public class ManualFlight : MonoBehaviour
     }	
 
     // _________________________________________________________________________________________________________/ Update
-   //  private void Update()
-   //  {
-	  //   if(_outOffBoundarys) return;
-	  //   if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f)
-	  //   {
-		 //    Move();
-		 //    if (_manualMovementActive) return;
-		 //    _manualMovementActive = true;
-			// _movement.SetActive(false);
-			// _toggle.Toggle();
-	  //   }
-	  //   else
-	  //   {
-		 //    if (!_manualMovementActive) return;
-		 //    _manualMovementActive = false;
-			// _movement.SetActive(true);
-			// _toggle.Toggle();
-	  //   }
-   //  }
+    private void Update()
+    {
+	    if(_outOffBoundarys) return;
+	    // if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f)
+	    if (testToggle)
+	    {
+		    Move();
+		    if (_manualMovementActive) return;
+		    _manualMovementActive = true;
+			_movement.SetActive(false);
+			_toggle.Toggle();
+	    }
+	    else
+	    {
+		    if (!_manualMovementActive) return;
+		    _manualMovementActive = false;
+			_movement.SetActive(true);
+			_toggle.Toggle();
+	    }
+    }
     
     // ___________________________________________________________________________________________________________/ Move
     private void Move()

@@ -71,7 +71,6 @@ public class AutoTileActivation : MonoBehaviour {
                 if (hit.collider == tiles[t].GetComponent<Collider>()) {
                     // Create link between waypoint and tile.
                     waypointTileMap.Add(waypoints[i], tiles[t]);
-                    // print("Link created! " + waypoints[i] + " + " + tiles[t]);
                 }
             }
         }

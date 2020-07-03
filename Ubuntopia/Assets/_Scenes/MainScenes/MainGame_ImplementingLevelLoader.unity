@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9026,6 +9026,16 @@ PrefabInstance:
       propertyPath: waypointParent
       value: 
       objectReference: {fileID: 1585123668}
+    - target: {fileID: 4351168010462046351, guid: 14b306309914a21469c4410bbedcaa9b,
+        type: 3}
+      propertyPath: _manualFlight
+      value: 
+      objectReference: {fileID: 4351168011201142105}
+    - target: {fileID: 4351168010462046351, guid: 14b306309914a21469c4410bbedcaa9b,
+        type: 3}
+      propertyPath: _toggleWings
+      value: 
+      objectReference: {fileID: 1746075657}
     - target: {fileID: 4351168010512711904, guid: 14b306309914a21469c4410bbedcaa9b,
         type: 3}
       propertyPath: m_Enabled
@@ -9164,6 +9174,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4351168011201142103}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4351168011201142105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4351168010512711904, guid: 14b306309914a21469c4410bbedcaa9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4351168011201142103}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268623484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23701a1833890341a00062238ca8ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &4355819571956378312
 MeshFilter:
   m_ObjectHideFlags: 0
