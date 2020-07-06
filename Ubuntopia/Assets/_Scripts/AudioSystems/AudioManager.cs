@@ -47,6 +47,7 @@ public class AudioManager : MonoBehaviour
             if (!p.isPlaying) {
                 _available.Add(p);
                 _playing.Remove(p);
+                return;
             }
         }
     }
