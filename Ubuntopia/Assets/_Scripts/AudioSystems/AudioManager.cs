@@ -79,7 +79,6 @@ public class AudioManager : MonoBehaviour
     // ___________________________________________________________________________________________________________/ Play
     public void Play(string name) {
         Play(name, transform);
-        print("playing: " + name);
     }
     public void Play(string name, Transform target)
     {
@@ -96,7 +95,6 @@ public class AudioManager : MonoBehaviour
     {
         int random = Random.Range(0, numberOfVariations);
         Play(name+random, transform);
-        print("playing: " + name+random);
     }
     
     public void PlayRandom(string name, int numberOfVariations, Transform target)

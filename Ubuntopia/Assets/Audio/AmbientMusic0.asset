@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AmbientMusic0
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: e1fd1d420a304ab469aa1593b0f177d4, type: 3}
-  volume: 0.15
+  volume: 0.3
   pitch: 1
   loop: 1
   playOnAwake: 0

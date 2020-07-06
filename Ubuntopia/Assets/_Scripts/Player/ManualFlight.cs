@@ -8,7 +8,7 @@ public class ManualFlight : MonoBehaviour
 	[SerializeField] private RotationFix _rotationFix;
 	[SerializeField] private Movement _movement;
 	[SerializeField] private ToggleWings _toggle;
-	
+
 	// ______________________________________________________________________________________________/ Private Variables
 	private bool _manualMovementActive = false, _outOffBoundarys = false;
 	private float _maxSpeed;
