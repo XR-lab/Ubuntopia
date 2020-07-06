@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FastAsFuckBoi : MonoBehaviour
+public class FastSceneSwitch : MonoBehaviour
 {
 	#region Public Variables _________________________________________________________________________/ Public Variables
 	
