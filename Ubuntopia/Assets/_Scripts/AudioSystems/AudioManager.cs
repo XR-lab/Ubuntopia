@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List<AudioSource> _playing = new List<AudioSource>();
     private int amountOfAudioSources = 10;
+    private Languages _language;
 
     // __________________________________________________________________________________________________________/ Awake
     private void Awake()
@@ -152,5 +153,17 @@ public class AudioManager : MonoBehaviour
         SoundClip c = _clips[name];
         if(c == null){print("No such name found!"); return null;}
         return c;
+    }
+    
+    // ______________________________________________________________________________________________________/ SetLanguage
+    public void SetLanguage(Languages newLanguageValue)
+    {
+        _language = newLanguageValue;
+    }
+    
+    // _______________________________________________________________________________________________________/ GetLanguage
+    public Languages GetLanguage()
+    {
+        return _language;
     }
 }
