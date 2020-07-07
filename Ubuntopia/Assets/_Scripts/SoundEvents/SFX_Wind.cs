@@ -15,7 +15,7 @@ public class SFX_Wind : MonoBehaviour {
 
     private float randomTime;
     private float timer;
-    private bool isMoving = true;
+    public bool isMoving = false;
     
     // Default string name for sfx file.
     private string name = "Wind";
@@ -31,11 +31,11 @@ public class SFX_Wind : MonoBehaviour {
 
     private void Update() {
         if (isMoving) {
-            if (timer >= randomTime) {
-                PlaySFX();
-                timer = 0;
-            }
-            timer += Time.deltaTime;
+             if (timer >= randomTime) {
+                 PlaySFX();
+                 timer = 0;
+             }
+             timer += Time.deltaTime;
         }
     }
 

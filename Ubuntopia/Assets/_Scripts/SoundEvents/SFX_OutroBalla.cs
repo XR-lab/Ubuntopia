@@ -2,31 +2,17 @@
 using UnityEngine;
 
 public class SFX_OutroBalla : MonoBehaviour {
-    private string name = "SFX_OutroBalla_";
+    private string name = "Outro_Balla_";
     
     // References.
-    private AudioManager _audioManager = AudioManager.instance;
+    [SerializeField, Header("Drag AudioManager here.")]
+    private AudioManager _audioManager;
 
-    private void PlaySFX() {
-        string newName = name;
-        
-        // Get language from audio manager.
-        Enum language = _audioManager.GetLanguage();
-        
-        // Switch.
-        switch (language) {
-            case language.English:
-                newName += "ENG";
-                break;
-            case language.Dutch:
-                newName += "DUT";
-                break;
-        }
+    private void Start() {
+        PlaySFX();
+    }
 
-        // What is new name?
-        print(newName);
-        
-        // Play sfx.
-        _audioManager.Play(newName);
+    public void PlaySFX() {
+        _audioManager.PlayLanguage(name);
     }
 }

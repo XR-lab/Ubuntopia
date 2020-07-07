@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour
 {
@@ -17,7 +19,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private List<AudioSource> _playing = new List<AudioSource>();
     private int amountOfAudioSources = 10;
-    private Languages _language;
+    private Languages _language = Languages.English;
 
     // __________________________________________________________________________________________________________/ Awake
     private void Awake()
@@ -102,6 +104,27 @@ public class AudioManager : MonoBehaviour
     {
         int random = Random.Range(0, numberOfVariations);
         Play(name+random, target);
+    }
+    
+    // __________________________________________________________________________________________________/ Play Language
+    public string PlayLanguage(string name) {
+        // Get default name.
+        string newName = name;
+        Languages lan = _language;
+        
+        // Check language and adjust name.
+        switch (lan) {
+            case Languages.English:
+                newName += "ENG";
+                break;
+            case Languages.Dutch:
+                newName += "DUT";
+                break;
+            default:
+                break;
+        }
+        Play(newName, transform);
+        return newName;
     }
 
     // ________________________________________________________________________________________________/ Check Available

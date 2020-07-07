@@ -1,11 +1,12 @@
 ﻿using System.Collections;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 public class IntroManager : MonoBehaviour
 {
     public delegate void nextPhaseStarter();
     public nextPhaseStarter nextPhase;
-    
+
     [SerializeField]
     private SceneSwitcher _sceneSwitcher;
 
@@ -23,15 +24,19 @@ public class IntroManager : MonoBehaviour
         StartCoroutine(Intro());
     }
     
-    private IEnumerator Intro()
-    {
-        string clipName = "Intro";
+    private IEnumerator Intro() {
+        string clipName = "Intro_Balla_";
         AudioManager am = AudioManager.instance;
-        float waitTimer = am.GetClipData(clipName).clip.length;
-        am.Play(clipName);
+        string introName = am.PlayLanguage(clipName);
+        float waitTimer = am.GetClipData(introName).clip.length;
         
         yield return new WaitForSeconds(waitTimer);
+        
+        // Turn off sfx. Needs refactor later as it does not belong here.
+        am.Stop("Campfire");
+        am.GetComponent<SFX_Wind>().isMoving = true;
 
+        // Announce next phase.
         nextPhase();
     }
 }
