@@ -9,6 +9,7 @@ public class BookInteraction : MonoBehaviour
     [SerializeField] private Animator _bookAnimator;
     [SerializeField] private List<GameObject> _otherBooks;
     [SerializeField] private Languages _bookLanguage;
+    [SerializeField] private GameObject _flag;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,7 @@ public class BookInteraction : MonoBehaviour
             AudioManager am = AudioManager.instance;
             am.SetLanguage(_bookLanguage);
             DisableOtherBooks();
+            _flag.SetActive(false);
             _bookAnimator.SetTrigger("Open");
             _introManager.StartIntro();
         }
