@@ -496,7 +496,7 @@ PrefabInstance:
         type: 3}
       propertyPath: clip
       value: 
-      objectReference: {fileID: 8300000, guid: 1e8893076c2878a4786343d4aa0f0143, type: 3}
+      objectReference: {fileID: 8300000, guid: cbbb45b82d280534f9a110f5e55f1831, type: 3}
     - target: {fileID: 613183548570414588, guid: 1f129eb23424b764eb7efed83ccd5fdf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -838,6 +838,7 @@ MonoBehaviour:
   _bookAnimator: {fileID: 1673752291}
   _otherBooks: []
   _bookLanguage: 1
+  _flag: {fileID: 0}
 --- !u!54 &324847460
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3484,7 +3485,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 6ce74ade1e98a0046afc1ce71b93d2ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ce74ade1e98a0046afc1ce71b93d2ce, type: 3}

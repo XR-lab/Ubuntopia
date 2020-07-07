@@ -2,6 +2,7 @@
 using UnityEngine;
 
 public class SFX_OutroBalla : MonoBehaviour {
+    // Default string name for sfx.
     private string name = "Outro_Balla_";
     
     // References.
@@ -9,7 +10,7 @@ public class SFX_OutroBalla : MonoBehaviour {
     private AudioManager _audioManager;
 
     private void Start() {
-        PlaySFX();
+        // PlaySFX();
     }
 
     public void PlaySFX() {
