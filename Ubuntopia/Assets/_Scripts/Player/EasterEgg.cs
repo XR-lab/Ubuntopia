@@ -3,26 +3,27 @@ using UnityEngine;
 
 public class EasterEgg : MonoBehaviour
 {
-    private GameObject[] _collectible;
+    [SerializeField] private List<GameObject> _collectible;
+    private int _amountCollected = 0;
 
-    public float minDistance;
-    public AudioSource song;
+    [SerializeField] private float minDistance;
+    private string sfxName = "Egg";
     
-   private void Start()
-   {
-       _collectible = GameObject.FindGameObjectsWithTag("Egg");
-   }
+    // References.
+    [SerializeField, Tooltip("Drag AudioManager here (from scene hierarchy).")]
+    private AudioManager _audioManager;
 
-   private void FixedUpdate()
-   {
-       for (int i = 0; i <= _collectible.Length; i++)
-       {
-           if (Vector3.Distance(this.gameObject.transform.position, _collectible[i].transform.position) <= minDistance)
-           {
-               _collectible[i].GetComponent<Collect>().Collected();
-               song.Play(0);
-
-           }
-       }
-   }    
+    private void FixedUpdate()
+    {
+        if (_amountCollected < _collectible.Count)
+        {
+            if (Vector3.Distance(this.gameObject.transform.position, _collectible[_amountCollected].transform.position) <= minDistance)
+            {
+                _collectible[_amountCollected].GetComponent<CollecEgg>().Collected();
+                _amountCollected++;
+                // Play pickup sfx.
+                _audioManager.Play(sfxName);
+            }
+        }
+    }    
 }
