@@ -13,7 +13,6 @@ public class ManualFlight : MonoBehaviour
 	private bool _manualMovementActive = false, _outOffBoundarys = false;
 	private float _maxSpeed;
 	private HandsToWings _handsToWings;
-	[SerializeField] private bool testToggle = false;
 	
     // __________________________________________________________________________________________________________/ Start
     private void Start()
@@ -26,8 +25,7 @@ public class ManualFlight : MonoBehaviour
     private void Update()
     {
 	    if(_outOffBoundarys) return;
-	    // if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f)
-	    if (testToggle)
+	    if (Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f)
 	    {
 		    Move();
 		    if (_manualMovementActive) return;
