@@ -56,5 +56,6 @@ public class ManualFlight : MonoBehaviour
     public void SetBoundaryState(bool state)
     {
 	    _outOffBoundarys = state;
+	    _manualMovementActive = false;
     }
 }

@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/MainScenes/StartScreen.unity
     guid: f0da1e620e0f80f4191f4fdc399b64cf
   - enabled: 0
@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/MistOptimized.unity
     guid: 3abba5c7dfbb78044967787df7dcfa41
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/MainScenes/EndScreen.unity
     guid: 8e7e9251b522f914d92a9dfd35ad6fc5
   - enabled: 0

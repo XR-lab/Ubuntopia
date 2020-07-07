@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BackToRoad : MonoBehaviour
 {
@@ -20,7 +19,6 @@ public class BackToRoad : MonoBehaviour
         if (other.transform.CompareTag("Harish"))
         {
             _manualFlight.SetBoundaryState(false);
-            _playerMovement.SetActive(false);
         }
     }
 }
