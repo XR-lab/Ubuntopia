@@ -31,7 +31,7 @@ public class ManualFlight : MonoBehaviour
 		    if (_manualMovementActive) return;
 		    _manualMovementActive = true;
 			_movement.SetActive(false);
-			_toggle.Toggle();
+			_toggle.SetManual(true);
 	    }
 	    else
 	    {
@@ -57,5 +57,6 @@ public class ManualFlight : MonoBehaviour
     {
 	    _outOffBoundarys = state;
 	    _manualMovementActive = false;
+	    _toggle.SetManual(Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f);
     }
 }
