@@ -74,7 +74,6 @@ public class Waypoints : MonoBehaviour {
         
         // If code reaches this part, we have reached second to last waypoint. Announce it.
         LastWaypoint.Invoke();
-        // SceneManager.LoadScene("OutroScene");
     }
 
     /// <summary>

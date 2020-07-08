@@ -19,7 +19,7 @@ public class GoToOutroScene : MonoBehaviour {
   // If the waypoint we arrive at (from movement) is equal to this game object, switch scene.
   private void SwitchScene(GameObject obj) {
     if (obj == gameObject) {
-      SceneManager.LoadSceneAsync("OutroScene");
+      SceneManager.LoadScene("OutroScene");
     }
   }
 }

@@ -9,7 +9,7 @@ public class SFX_IntroBalla : MonoBehaviour {
     private AudioManager _audioManager;
 
     private void Start() {
-        PlaySFX();
+        // PlaySFX();
     }
 
     public void PlaySFX() {

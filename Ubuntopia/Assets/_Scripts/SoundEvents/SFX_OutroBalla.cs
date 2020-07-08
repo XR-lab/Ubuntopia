@@ -9,10 +9,6 @@ public class SFX_OutroBalla : MonoBehaviour {
     [SerializeField, Header("Drag AudioManager here.")]
     private AudioManager _audioManager;
 
-    private void Start() {
-        // PlaySFX();
-    }
-
     public void PlaySFX() {
         _audioManager.PlayLanguage(name);
     }

@@ -33,6 +33,7 @@ public class IntroManager : MonoBehaviour
         yield return new WaitForSeconds(waitTimer);
         
         // Turn off sfx. Needs refactor later as it does not belong here.
+        // We will enter main scene.
         am.Stop("Campfire");
         am.GetComponent<SFX_Wind>().isMoving = true;
 
