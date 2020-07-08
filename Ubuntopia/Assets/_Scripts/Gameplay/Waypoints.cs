@@ -35,7 +35,6 @@ public class Waypoints : MonoBehaviour {
         time += Time.deltaTime;
         if (time >= delay) {
             Arrived.Invoke(GetClosestWaypoint());
-            print(GetClosestWaypoint());
             time = 0;
         }
     }
@@ -75,7 +74,7 @@ public class Waypoints : MonoBehaviour {
         
         // If code reaches this part, we have reached second to last waypoint. Announce it.
         LastWaypoint.Invoke();
-        SceneManager.LoadScene("EndScreen");
+        // SceneManager.LoadScene("OutroScene");
     }
 
     /// <summary>
