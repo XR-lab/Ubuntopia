@@ -27,6 +27,12 @@ public class ToggleWings : MonoBehaviour {
         }
     }
 
+    public void SetManual(bool manual)
+    {
+        this.manual = manual;
+        ToggleObject(manual);
+    }
+
     private void ToggleObject(bool b) {
         obj1.SetActive(b);
         obj2.SetActive(!b);

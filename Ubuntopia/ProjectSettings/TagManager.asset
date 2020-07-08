@@ -10,6 +10,7 @@ TagManager:
   - HarishRight
   - Harish
   - HarishColliders
+  - Egg
   layers:
   - Default
   - TransparentFX
