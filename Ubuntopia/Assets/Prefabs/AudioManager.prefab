@@ -74,8 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7846a216b1a47584096187e1e5a670b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 3
-  maxTime: 5
-  numberOfVariations: 0
+  minTime: 6
+  maxTime: 9
+  numberOfVariations: 2
   _audioManager: {fileID: 613183548570414579}
-  _movement: {fileID: 0}

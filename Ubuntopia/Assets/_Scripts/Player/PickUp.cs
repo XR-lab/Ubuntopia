@@ -7,6 +7,11 @@ public class PickUp : MonoBehaviour
     private int _amountCollected = 0;
 
     [SerializeField] private float minDistance;
+    private string sfxName = "Artifact_Pickup";
+    
+    // References.
+    [SerializeField, Tooltip("Drag AudioManager here (from scene hierarchy).")]
+    private AudioManager _audioManager;
 
     private void FixedUpdate()
    {
@@ -16,6 +21,8 @@ public class PickUp : MonoBehaviour
            {
                _collectible[_amountCollected].GetComponent<Collect>().Collected();
                _amountCollected++;
+               // Play pickup sfx.
+               _audioManager.Play(sfxName);
            }
        }
    }    

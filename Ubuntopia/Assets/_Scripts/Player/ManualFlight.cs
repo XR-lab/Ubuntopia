@@ -8,7 +8,7 @@ public class ManualFlight : MonoBehaviour
 	[SerializeField] private RotationFix _rotationFix;
 	[SerializeField] private Movement _movement;
 	[SerializeField] private ToggleWings _toggle;
-	
+
 	// ______________________________________________________________________________________________/ Private Variables
 	private bool _manualMovementActive = false, _outOffBoundarys = false;
 	private float _maxSpeed;
@@ -31,7 +31,7 @@ public class ManualFlight : MonoBehaviour
 		    if (_manualMovementActive) return;
 		    _manualMovementActive = true;
 			_movement.SetActive(false);
-			_toggle.Toggle();
+			_toggle.SetManual(true);
 	    }
 	    else
 	    {
@@ -56,5 +56,7 @@ public class ManualFlight : MonoBehaviour
     public void SetBoundaryState(bool state)
     {
 	    _outOffBoundarys = state;
+	    _manualMovementActive = false;
+	    _toggle.SetManual(Vector3.Distance(_rightHand.position, _leftHand.position) >= 0.6f);
     }
 }
