@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 613183548570414579}
   - component: {fileID: 1529923462}
   - component: {fileID: 1529923463}
+  - component: {fileID: 802443327}
+  - component: {fileID: 802443332}
+  - component: {fileID: 802443333}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -45,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d77c400115358428e210e78f801ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: b821e2d98893df64f9567088667a6d32, type: 3}
+  clip: {fileID: 8300000, guid: cbbb45b82d280534f9a110f5e55f1831, type: 3}
   _sounds: {fileID: 11400000, guid: ff2a62e75e039944992e79e9b03d6437, type: 2}
   _available: []
   _playing: []
@@ -77,4 +80,43 @@ MonoBehaviour:
   minTime: 6
   maxTime: 9
   numberOfVariations: 2
+  isMoving: 0
+  _audioManager: {fileID: 613183548570414579}
+--- !u!114 &802443327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613183548570414578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65426777b7e1ec442af0b266bdb6c281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &802443332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613183548570414578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32444cc05f26f5b4094c9e0472465084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioManager: {fileID: 613183548570414579}
+--- !u!114 &802443333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613183548570414578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0638fc307f5f6e4f8fd4d4fe81396d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _audioManager: {fileID: 613183548570414579}

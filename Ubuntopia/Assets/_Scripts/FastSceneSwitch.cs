@@ -22,7 +22,7 @@ public class FastSceneSwitch : MonoBehaviour
     {
 	    if (Vector3.Distance(transform.position, player.position) <= 5)
 	    {
-		    SceneManager.LoadScene("EndScreen");
+		    SceneManager.LoadScene("OutroScene");
 	    }
     }
 }
