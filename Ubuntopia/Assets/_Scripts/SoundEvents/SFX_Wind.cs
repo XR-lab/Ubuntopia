@@ -40,7 +40,7 @@ public class SFX_Wind : MonoBehaviour {
     }
 
     public void PlaySFX() {
-        _audioManager.PlayRandom(name, numberOfVariations);
+        AudioManager.instance.PlayRandom(name, numberOfVariations);
         randomTime = Random.Range(minTime, maxTime);
     }
 }
