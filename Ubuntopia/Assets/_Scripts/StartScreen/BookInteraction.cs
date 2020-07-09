@@ -21,6 +21,7 @@ public class BookInteraction : MonoBehaviour
             DisableOtherBooks();
             _flag.SetActive(false);
             _bookAnimator.SetTrigger("Open");
+            _introManager._textureChanger = GetComponent<TextureChanger>();
             _introManager.StartIntro();
         }
     }

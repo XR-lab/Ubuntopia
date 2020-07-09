@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -626,12 +626,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f129eb23424b764eb7efed83ccd5fdf, type: 3}
---- !u!4 &199753174 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1312634650188121674, guid: ebdcc7255ff35024285545d3ddf3a65d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1212675803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &256211135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -872,6 +866,7 @@ GameObject:
   - component: {fileID: 324847460}
   - component: {fileID: 324847459}
   - component: {fileID: 324847458}
+  - component: {fileID: 324847463}
   m_Layer: 0
   m_Name: Book NL
   m_TagString: Untagged
@@ -957,6 +952,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
+--- !u!114 &324847463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324847457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8613f6e256bd87846a3d01370052d89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookMaterials:
+  - {fileID: 2100000, guid: be006dae43e14194a9205fe1bd338599, type: 2}
+  - {fileID: 2100000, guid: 045f86b90460df8479be1a68d5518a5b, type: 2}
+  - {fileID: 2100000, guid: a8da737f9f7b1dd4d8301804f4686e2a, type: 2}
+  bookMat: {fileID: 1684674038}
 --- !u!4 &358571717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: d5c7c9eaf287b2848a5eff3b84496c26,
@@ -1327,12 +1339,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdcc7255ff35024285545d3ddf3a65d, type: 3}
---- !u!4 &643275957 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1312634650188121674, guid: ebdcc7255ff35024285545d3ddf3a65d,
-    type: 3}
-  m_PrefabInstance: {fileID: 643275956}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705322639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1822,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a20f54b7fc848b445b3f3e61dead5075, type: 3}
+--- !u!4 &1071565467 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7579331982424905441, guid: ebdcc7255ff35024285545d3ddf3a65d,
+    type: 3}
+  m_PrefabInstance: {fileID: 643275956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1085095287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2011,6 +2023,7 @@ GameObject:
   - component: {fileID: 1115015457}
   - component: {fileID: 1115015456}
   - component: {fileID: 1115015455}
+  - component: {fileID: 1115015460}
   m_Layer: 0
   m_Name: Book EN
   m_TagString: Untagged
@@ -2096,6 +2109,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
+--- !u!114 &1115015460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115015454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8613f6e256bd87846a3d01370052d89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookMaterials:
+  - {fileID: 2100000, guid: be006dae43e14194a9205fe1bd338599, type: 2}
+  - {fileID: 2100000, guid: 045f86b90460df8479be1a68d5518a5b, type: 2}
+  - {fileID: 2100000, guid: a8da737f9f7b1dd4d8301804f4686e2a, type: 2}
+  bookMat: {fileID: 1565382070}
+--- !u!4 &1124404102 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7579331982424905441, guid: ebdcc7255ff35024285545d3ddf3a65d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1212675803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1126201761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,6 +2220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneSwitcher: {fileID: 1126201765}
+  _textureChanger: {fileID: 0}
 --- !u!1001 &1212675803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2673,9 +2710,9 @@ Transform:
   - {fileID: 256211136}
   - {fileID: 288434628}
   - {fileID: 34840638}
-  - {fileID: 643275957}
+  - {fileID: 1071565467}
   - {fileID: 1311733234}
-  - {fileID: 199753174}
+  - {fileID: 1124404102}
   - {fileID: 622370682}
   - {fileID: 2113713828}
   - {fileID: 820351159}
@@ -3003,6 +3040,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542878766}
   m_CullTransparentMesh: 0
+--- !u!23 &1565382070 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8471575443408570876, guid: 2799dea4fabd5d845af536c248508374,
+    type: 3}
+  m_PrefabInstance: {fileID: 1667933471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1581674490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3460,6 +3503,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portal: {fileID: 66952300}
+--- !u!23 &1684674038 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8471575443408570876, guid: 2799dea4fabd5d845af536c248508374,
+    type: 3}
+  m_PrefabInstance: {fileID: 1673752288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1804105372
 GameObject:
   m_ObjectHideFlags: 0

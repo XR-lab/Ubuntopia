@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-
+using System.Collections.Generic;
 using UnityEngine;
 
 public class IntroManager : MonoBehaviour
@@ -11,6 +11,8 @@ public class IntroManager : MonoBehaviour
     private SceneSwitcher _sceneSwitcher;
 
     private Timer _timer;
+    [SerializeField]
+    public TextureChanger _textureChanger;
     
     void Start()
     {
@@ -22,6 +24,20 @@ public class IntroManager : MonoBehaviour
     public void StartIntro()
     {
         StartCoroutine(Intro());
+        StartCoroutine(ChangeTexture1());
+        StartCoroutine(ChangeTexture2());
+    }
+
+    private IEnumerator ChangeTexture1()
+    {
+        yield return new WaitForSeconds(10);
+        _textureChanger.ChangeTexture();
+    }
+    
+    private IEnumerator ChangeTexture2()
+    {
+        yield return new WaitForSeconds(28);
+        _textureChanger.ChangeTexture();
     }
     
     private IEnumerator Intro() {
