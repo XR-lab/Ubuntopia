@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Campfire
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9618b72f6e58f2d4e8779f2a5a0f322c, type: 3}
-  volume: 0.5
+  volume: 0.7
   pitch: 1
   loop: 0
   playOnAwake: 0
