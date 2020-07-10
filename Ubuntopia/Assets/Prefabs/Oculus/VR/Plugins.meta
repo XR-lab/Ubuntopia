@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e1f06b56b3e7614419c5db24e2262938
+=======
+<<<<<<<< HEAD:Ubuntopia/Assets/Prefabs/Oculus/VR/Plugins.meta
+guid: 5c910c98ddfa93348bf2ba0d1effa3e9
+========
+guid: f0ea3db5b4c704148aadb32b29234f09
+>>>>>>>> origin/feature/-eenhoorn:Ubuntopia/Assets/Prefabs/Oculus/Spatializer/Plugins.meta
+>>>>>>> origin/feature/-eenhoorn
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
